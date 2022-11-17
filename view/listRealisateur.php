@@ -8,7 +8,6 @@
             foreach($requete->fetchAll() as $realisateur) { ?>
             <tr>
                 <td><a href="index.php?action=detailRealisateur&id=<?= $realisateur['id_realisateur'] ?>"><?= $realisateur['prenom_personne'].' '.$realisateur['nom_personne'] ?></a></td>
-                <td></td>
             </tr>
         <?php } ?>
     </tbody>
