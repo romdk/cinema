@@ -52,3 +52,4 @@ $titre = 'Details du film';
 $titre_secondaire = 'Details du film';
 $contenu = ob_get_clean();
 require 'view/template.php';
+?>

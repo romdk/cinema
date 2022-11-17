@@ -19,3 +19,4 @@ $titre = 'Liste des genres';
 $titre_secondaire = 'Liste des genres';
 $contenu = ob_get_clean();
 require 'view/template.php';
+?>
