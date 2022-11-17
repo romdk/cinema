@@ -27,7 +27,7 @@ class CinemaController {
     public function listActeurs(){
         $pdo = Connect::seConnecter();
         $requete = $pdo->query('
-        SELECT prenom_personne, nom_personne
+        SELECT prenom_personne, nom_personne,id_acteur
         FROM personne
         INNER JOIN acteur
         ON personne.id_personne = acteur.id_personne
@@ -100,24 +100,32 @@ class CinemaController {
         WHERE realisateur.id_realisateur = :id
         ');
         $requete2->execute(['id' => $id]);
-        
+
         require 'view/detailRealisateur.php';
     }
 
     public function detailActeur($id){
         $pdo = Connect::seConnecter();
         $requete = $pdo->prepare('
-        SELECT prenom_personne, nom_personne,date_naissance,titre, annee_sortie, affiche
+        SELECT prenom_personne, nom_personne,date_naissance
+        FROM personne
+        INNER JOIN acteur
+        ON personne.id_personne = acteur.id_personne
+        WHERE acteur.id_acteur = :id
+        ');
+        $requete->execute(['id' => $id]);
+
+        $requete2 = $pdo->prepare('
+        SELECT titre
         FROM film
         INNER JOIN figurer
         ON film.id_film = figurer.id_film
         INNER JOIN acteur
         ON figurer.id_acteur = acteur.id_acteur
-        INNER JOIN personne
-        ON acteur.id_personne = personne.id_personne
         WHERE acteur.id_acteur = :id
         ');
-        $requete->execute(['id' => $id]);
+        $requete2->execute(['id' => $id]);
+        
         require 'view/detailActeur.php';
     }
 
