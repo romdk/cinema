@@ -47,7 +47,7 @@ class CinemaController {
     public function listRoles(){
         $pdo = Connect::seConnecter();
         $requete = $pdo->query('
-        SELECT nom_personnage
+        SELECT nom_personnage,id_role
         FROM role
         ');
         require 'view/listRoles.php';
@@ -153,19 +153,31 @@ class CinemaController {
     public function detailRole($id){
         $pdo = Connect::seConnecter();
         $requete = $pdo->prepare('
-        SELECT titre,prenom_personne,nom_personne,nom_personnage
+        SELECT nom_personnage
+        FROM role
+        WHERE id_role = :id
+        ');
+        $requete->execute(['id' => $id]);
+
+        $requete2 = $pdo->prepare('
+        SELECT DISTINCT nom_personne, prenom_personne
+        FROM personne
+        INNER JOIN acteur
+        ON personne.id_personne = acteur.id_personne
+        INNER JOIN figurer
+        ON acteur.id_acteur = figurer.id_acteur
+        WHERE id_role = :id
+        ');
+        $requete2->execute(['id' => $id]);
+
+        $requete3 = $pdo->prepare('
+        SELECT titre
         FROM film
         INNER JOIN figurer
         ON film.id_film = figurer.id_film
-        INNER JOIN role
-        ON figurer.id_role = role.id_role
-        INNER JOIN acteur
-        ON figurer.id_acteur = acteur.id_acteur
-        INNER JOIN personne
-        ON acteur.id_personne = personne.id_personne
-        WHERE role.id_role = :id
+        WHERE figurer.id_role = :id
         ');
-        $requete->execute(['id' => $id]);
+        $requete3->execute(['id' => $id]);
         require 'view/detailRole.php';
     }
 
