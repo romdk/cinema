@@ -7,7 +7,7 @@
         <?php
             foreach($requete->fetchAll() as $role) { ?>
             <tr>
-                <td><?= $role['nom_personnage'] ?></td>
+                <td><a href="index.php?action=detailRole&id=<?= $role['id_role'] ?>"><?= $role['nom_personnage'] ?></a></td>                
             </tr>
         <?php } ?>
     </tbody>
