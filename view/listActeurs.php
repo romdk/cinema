@@ -3,18 +3,11 @@
 <p> Il y a <?= $requete->rowCount() ?> acteurs</p>
 
 <table>
-    <thead>
-        <tr>
-            <th>PRENOM</th>
-            <th>NOM</th>
-        </tr>
-    </thead>
     <tbody>
         <?php
             foreach($requete->fetchAll() as $acteur) { ?>
             <tr>
-                <td><?= $acteur['prenom_personne'] ?></td>
-                <td><?= $acteur['nom_personne'] ?></td>
+                <td><a href="index.php?action=detailActeur&id=<?= $acteur['id_acteur'] ?>"><?= $acteur['prenom_personne'].' '.$acteur['nom_personne'] ?></a></td>
             </tr>
         <?php } ?>
     </tbody>
