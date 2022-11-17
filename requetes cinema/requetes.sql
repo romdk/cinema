@@ -73,7 +73,6 @@ INNER JOIN realisateur
 ON personne.id_personne = realisateur.id_personne
 INNER JOIN acteur
 ON personne.id_personne = acteur.id_personne
-WHERE id_acteur IS NOT NULL AND id_realisateur IS NOT NULL
 
 -- Liste des films qui ont moins de 5 ans (classés du plus récent au plus ancien)
 SELECT titre, annee_sortie
