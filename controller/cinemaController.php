@@ -73,9 +73,7 @@ class CinemaController {
         ON personne.id_personne = acteur.id_personne
         INNER JOIN figurer
         ON acteur.id_acteur = figurer.id_acteur
-        INNER JOIN film
-        ON figurer.id_film = film.id_film
-        WHERE film.id_film = :id
+        WHERE id_film = :id
         ');
         $requete2->execute(['id' => $id]);
         require 'view/detailFilm.php';
@@ -120,9 +118,7 @@ class CinemaController {
         FROM film
         INNER JOIN figurer
         ON film.id_film = figurer.id_film
-        INNER JOIN acteur
-        ON figurer.id_acteur = acteur.id_acteur
-        WHERE acteur.id_acteur = :id
+        WHERE id_acteur = :id
         ');
         $requete2->execute(['id' => $id]);
         
@@ -142,9 +138,7 @@ class CinemaController {
         FROM film
         INNER JOIN associer
         ON film.id_film = associer.id_film
-        INNER JOIN genre
-        ON associer.id_genre = genre.id_genre
-        WHERE genre.id_genre = :id
+        WHERE id_genre = :id
         ');
         $requete2->execute(['id' => $id]);
         require 'view/detailGenre.php';
@@ -175,7 +169,7 @@ class CinemaController {
         FROM film
         INNER JOIN figurer
         ON film.id_film = figurer.id_film
-        WHERE figurer.id_role = :id
+        WHERE id_role = :id
         ');
         $requete3->execute(['id' => $id]);
         require 'view/detailRole.php';
