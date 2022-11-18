@@ -23,22 +23,36 @@ if(isset($_GET['action'])){
         case 'detailRole' : $ctrlCinema->detailRole($id); break;
 
         case 'ajoutRole' : 
-            if(isset($_POST['submit'])){
+            if(isset($_POST['ajouterRole'])){
             $nomPersonnage =filter_input(INPUT_POST,'nom_personnage',FILTER_SANITIZE_SPECIAL_CHARS);
             if($nomPersonnage){
             $ctrlCinema->ajoutRole($nomPersonnage);}}
-            $ctrlCinema->listRoles(); break;
+            $ctrlCinema->listRoles(); 
+        break;
 
         case 'ajoutRealisateur' : 
-            if(isset($_POST['submit'])){
-                $nomPersonne =filter_input(INPUT_POST,'nom_personne',FILTER_SANITIZE_SPECIAL_CHARS);
-                $prenomPersonne =filter_input(INPUT_POST,'prenom_personne',FILTER_SANITIZE_SPECIAL_CHARS);
-                $sexe =filter_input(INPUT_POST,'sexe',FILTER_SANITIZE_SPECIAL_CHARS);
-                $dateNaissance =filter_input(INPUT_POST,'date_naissance',FILTER_SANITIZE_SPECIAL_CHARS);
-                if($nomPersonne && $prenomPersonne && $sexe && $dateNaissance){
-                $ctrlCinema->ajoutRealisateur($nomPersonne,$prenomPersonne,$sexe,$dateNaissance);}}
-                $ctrlCinema->listRealisateurs(); break;
-            break;
+            if(isset($_POST['ajouterRealisateur'])){
+            $nomPersonne =filter_input(INPUT_POST,'nom_personne',FILTER_SANITIZE_SPECIAL_CHARS);
+            $prenomPersonne =filter_input(INPUT_POST,'prenom_personne',FILTER_SANITIZE_SPECIAL_CHARS);
+            $sexe =filter_input(INPUT_POST,'sexe',FILTER_SANITIZE_SPECIAL_CHARS);
+            $dateNaissance =filter_input(INPUT_POST,'date_naissance',FILTER_SANITIZE_SPECIAL_CHARS);
+            if($nomPersonne && $prenomPersonne && $sexe && $dateNaissance){
+            $ctrlCinema->ajoutPersonne($nomPersonne,$prenomPersonne,$sexe,$dateNaissance);
+            $ctrlCinema->ajoutRealisateur();}}
+            $ctrlCinema->listRealisateurs(); 
+        break;
+
+        case 'ajoutActeur' : 
+            if(isset($_POST['ajouterActeur'])){
+            $nomPersonne =filter_input(INPUT_POST,'nom_personne',FILTER_SANITIZE_SPECIAL_CHARS);
+            $prenomPersonne =filter_input(INPUT_POST,'prenom_personne',FILTER_SANITIZE_SPECIAL_CHARS);
+            $sexe =filter_input(INPUT_POST,'sexe',FILTER_SANITIZE_SPECIAL_CHARS);
+            $dateNaissance =filter_input(INPUT_POST,'date_naissance',FILTER_SANITIZE_SPECIAL_CHARS);
+            if($nomPersonne && $prenomPersonne && $sexe && $dateNaissance){
+            $ctrlCinema->ajoutPersonne($nomPersonne,$prenomPersonne,$sexe,$dateNaissance);
+            $ctrlCinema->ajoutActeur();}}
+            $ctrlCinema->listActeurs(); 
+        break;
         case 'ajoutFilm' : $ctrlCinema->ajoutFilm(); break;
     }
 }
