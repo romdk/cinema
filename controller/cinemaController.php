@@ -209,6 +209,15 @@ class CinemaController {
         '); 
     }
 
+    public function ajoutFilm($titre,$anneeSortie,$duree,$synopsis,$note,$affiche){
+        $pdo = Connect::seConnecter();
+        $requete = $pdo->query('
+        INSERT INTO film(titre,annee_sortie,duree,synopsis,note,affiche)
+        VALUES("'.$titre.'","'.$anneeSortie.'","'.$duree.'","'.$synopsis.'","'.$note.'","'.$affiche.'")
+        '); 
+    }
+
+
 
 
 
