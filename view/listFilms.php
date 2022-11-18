@@ -62,9 +62,9 @@
         </label>
     </div>
     <div>
-        <label for="file">
-            Choisir une image
-            <input type="file" name="image">    
+        <label>
+            Affiche:
+            <input type="text" name="affiche" placeholder="Inserer url de l'affiche">
         </label>
     </div>
     <div>
