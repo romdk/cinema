@@ -13,6 +13,16 @@
     </tbody>
 </table>
 
+<h4>Ajouter un rôle</h4>
+
+<form action="index.php?action=ajoutRole" method="post">
+        <label>
+            Nom du personnage :
+            <input type="text" name="nom_personnage">
+        </label>
+        <input type="submit" name="submit" value="Ajouter le role" >
+</form>
+
 <?php
 
 $titre = 'Liste des rôles';

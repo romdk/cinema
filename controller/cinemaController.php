@@ -175,5 +175,25 @@ class CinemaController {
         require 'view/detailRole.php';
     }
 
+    public function ajoutRole($nomPersonnage){
+        $pdo = Connect::seConnecter();
+        $requete = $pdo->query('
+        INSERT INTO role(nom_personnage)
+        VALUES ("'.$nomPersonnage.'")
+        ');
+    }
+
+    public function ajoutRealisateur($nomPersonne, $prenomPersonne, $sexe, $dateNaissance){
+        $pdo = Connect::seConnecter();
+        $requete = $pdo->query('
+        INSERT INTO personne(nom_personne,prenom_personne,sexe,date_naissance)
+        VALUES ("'.$nomPersonne.','.$prenomPersonne.','.$sexe.','.$dateNaissance.'")
+        INSERT INTO realisateur(id_personne)
+        SELECT id_personne
+        FROM personne
+        ');
+    
+    }
+
 
 }

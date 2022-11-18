@@ -21,6 +21,25 @@ if(isset($_GET['action'])){
         case 'detailActeur' : $ctrlCinema->detailActeur($id); break;
         case 'detailGenre' : $ctrlCinema->detailGenre($id); break;
         case 'detailRole' : $ctrlCinema->detailRole($id); break;
+
+        case 'ajoutRole' : 
+            if(isset($_POST['submit'])){
+            $nomPersonnage =filter_input(INPUT_POST,'nom_personnage',FILTER_SANITIZE_SPECIAL_CHARS);
+            if($nomPersonnage){
+            $ctrlCinema->ajoutRole($nomPersonnage);}}
+            $ctrlCinema->listRoles(); break;
+
+        case 'ajoutRealisateur' : 
+            if(isset($_POST['submit'])){
+                $nomPersonne =filter_input(INPUT_POST,'nom_personne',FILTER_SANITIZE_SPECIAL_CHARS);
+                $prenomPersonne =filter_input(INPUT_POST,'prenom_personne',FILTER_SANITIZE_SPECIAL_CHARS);
+                $sexe =filter_input(INPUT_POST,'sexe',FILTER_SANITIZE_SPECIAL_CHARS);
+                $dateNaissance =filter_input(INPUT_POST,'date_naissance',FILTER_SANITIZE_SPECIAL_CHARS);
+                if($nomPersonne && $prenomPersonne && $sexe && $dateNaissance){
+                $ctrlCinema->ajoutRealisateur($nomPersonne,$prenomPersonne,$sexe,$dateNaissance);}}
+                $ctrlCinema->listRealisateurs(); break;
+            break;
+        case 'ajoutFilm' : $ctrlCinema->ajoutFilm(); break;
     }
 }
 
