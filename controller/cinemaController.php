@@ -183,17 +183,33 @@ class CinemaController {
         ');
     }
 
-    public function ajoutRealisateur($nomPersonne, $prenomPersonne, $sexe, $dateNaissance){
+    public function ajoutPersonne($nomPersonne,$prenomPersonne,$sexe,$dateNaissance){
         $pdo = Connect::seConnecter();
         $requete = $pdo->query('
         INSERT INTO personne(nom_personne,prenom_personne,sexe,date_naissance)
-        VALUES ("'.$nomPersonne.','.$prenomPersonne.','.$sexe.','.$dateNaissance.'")
-        INSERT INTO realisateur(id_personne)
-        SELECT id_personne
-        FROM personne
+        VALUES ("'.$nomPersonne.'","'.$prenomPersonne.'","'.$sexe.'","'.$dateNaissance.'")
         ');
-    
     }
+
+    public function ajoutRealisateur(){
+        $pdo = Connect::seConnecter();
+        $requete = $pdo->query('
+        INSERT INTO realisateur(id_personne)
+        SELECT MAX(id_personne)
+        FROM personne
+        '); 
+    }
+
+    public function ajoutActeur(){
+        $pdo = Connect::seConnecter();
+        $requete = $pdo->query('
+        INSERT INTO acteur(id_personne)
+        SELECT MAX(id_personne)
+        FROM personne
+        '); 
+    }
+
+
 
 
 }
