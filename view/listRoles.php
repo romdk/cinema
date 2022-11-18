@@ -20,7 +20,7 @@
             Nom du personnage :
             <input type="text" name="nom_personnage">
         </label>
-        <input type="submit" name="submit" value="Ajouter le role" >
+        <input type="submit" name="ajouterRole" value="Ajouter le role" >
 </form>
 
 <?php
