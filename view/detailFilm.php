@@ -1,6 +1,7 @@
 <?php ob_start() ?>
 
-<table>
+<div class='detailFilm'>
+<table class='tableFilm'>
     <tbody>
         <?php
             $informations = $requete->fetch()
@@ -21,7 +22,7 @@
                 <td>Synopsis: <?= $informations['synopsis'] ?></td>
             </tr>
             <tr>
-                <td><?= $informations['note'] ?>/5</td>
+                <td>Note: <?= $informations['note'] ?>/5</td>
             </tr>
             <tr>
                 <td><img src="<?= $informations['affiche'] ?>" alt="affiche du film <?= $informations['titre'] ?>"></td>
@@ -29,18 +30,18 @@
     </tbody>
 </table>
 
-<h3>CASTING</h3>
-
-<table>
+<table class='tableCasting'>
+    <h3>CASTING</h3>
     <tbody>
         <?php
             foreach($requete2->fetchAll() as $acteur) { ?>
             <tr>
                 <td><?= $acteur['prenom_personne'].' '.$acteur['nom_personne'] ?></td>
             </tr>
-        <?php } ?>
-    </tbody>
-</table>
+            <?php } ?>
+        </tbody>
+    </table>
+</div>
 
 
 

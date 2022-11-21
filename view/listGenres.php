@@ -2,7 +2,12 @@
 
 <p> Il y a <?= $requete->rowCount() ?> genres</p>
 
-<table>
+<table class='table'>
+<thead>
+        <tr>
+            <th>GENRE</th>
+        </tr>
+    </thead>
     <tbody>
         <?php
             foreach($requete->fetchAll() as $genre) { ?>
