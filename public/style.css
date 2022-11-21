@@ -17,7 +17,7 @@ body{
 }
 
 a{
-    color: black;
+    color: #262626;
 }
 
 
@@ -28,7 +28,7 @@ nav{
     background-color: #fecc00;
     padding: 10px;
     width: 100vw;
-    height: 80px;
+    height: 105px;
     box-shadow:
     0.6px 0.6px 0.8px rgba(0, 0, 0, 0.006),
     1.3px 1.3px 2px rgba(0, 0, 0, 0.008),
@@ -42,11 +42,42 @@ nav{
 nav h1{
     position: relative;
     width: 100%;
-    margin-left: calc(20% - 5px);
+    margin-left: calc(23%);
     text-transform: uppercase;
     font-size: 1.7rem;
     font-weight: 800;
+    color: #262626;
 }
+
+.searchbar{
+    position: absolute;
+    top: 10px;
+    left: 700px;
+}
+
+.searchbar input{
+    width: 362px;
+    height: 34px;
+    padding: 10px 14px;
+    border: none;
+    outline: none;
+}
+
+.searchbar .fa-magnifying-glass{
+background-color: white;
+vertical-align: middle;
+height:34px;
+width: 34px;
+padding: 12px 10px;
+font-size: .8rem;
+transform: translateY(-1px);
+}
+
+.searchbar .fa-magnifying-glass:hover{
+    background-color: rgb(240, 240, 240);
+    cursor: pointer;
+}
+
 
 .fa-ticket-simple{
     position: relative;
@@ -67,8 +98,8 @@ nav ul{
     display: flex;
     align-items: center;
     width: 100%;
-    margin-left: calc(20% - 6px);
-    margin-top: 7px;
+    margin-left: calc(23% - 3px);
+    margin-top: 32px;
 }
 
 nav ul li{
@@ -89,7 +120,7 @@ nav ul li:hover{
 }
 
 nav ul li:nth-child(6){
-    margin-left: calc(33% - 3px);
+    margin-left: calc(26% + 1px);
     background-color: #1ca2eb;
 }
 nav ul li:nth-child(6) a{
@@ -102,17 +133,15 @@ nav ul li:nth-child(6):hover{
 
 main{
     background-color: #ffffff;
-    width: 60%;
+    width: 1024px;
     height: 100vw;
 }
 
 
 .contenu{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+    width: 100%;
 }
+
 h2{
     margin-top: 10px;
     margin-left: 20px;
@@ -127,6 +156,7 @@ h2{
 .table{
     width: 80%;
     margin-top: 30px;
+    margin-left: 10%;
     border-spacing: 0px 5px;
 }
 
@@ -181,11 +211,46 @@ h3{
 }
 
 .adminForm{
+    justify-content: start;
     margin: 20px;
     padding: 20px;
-    width: 50%;
+    width: 984px;
     background-color:#ececec;
     border-radius: 5px;
+    box-shadow:
+    0.6px 0.6px 0.8px rgba(0, 0, 0, 0.006),
+    1.3px 1.3px 2px rgba(0, 0, 0, 0.008),
+    2.5px 2.5px 3.8px rgba(0, 0, 0, 0.01),
+    4.5px 4.5px 6.7px rgba(0, 0, 0, 0.012),
+    8.4px 8.4px 12.5px rgba(0, 0, 0, 0.014),
+    20px 20px 30px rgba(0, 0, 0, 0.02)
+  ;
+}
+
+#realisateurActeurRole{
+    display: flex;
+    justify-content: space-e;
+    width: 100%;
+}
+
+#realisateurActeurRole .adminForm:nth-child(n){
+    width: 328px;
+    margin-top: 0;
+}
+
+#realisateurActeurRole .adminForm:nth-child(1){
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+#realisateurActeurRole .adminForm:nth-child(2){
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+#realisateurActeurRole .adminForm:nth-child(3){
+    margin-right: 20px;
+    margin-left: 10px;
 }
 
 .multiselect {
@@ -211,5 +276,57 @@ h3{
    }
    #checkboxes label:hover {
     background-color: #1e90ff;
+   }
+
+   .synopsis{
+    width: 100%;
+    height: 150px;
+   }
+
+   .synopsis textarea{
+    width: 100%;
+    height: 100%;
+   }
+
+   .row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 20px;
+   }
+
+   .row:nth-child(3){
+    margin-top: 40px;
+   }
+
+   .btnAjouter{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+   }
+
+   .btnAjouter input{
+    width: 200px;
+    height: 30px;
+    background-color: #fecc00;
+    border-radius: 5px;
+    border: none;
+    box-shadow:
+    0.6px 0.6px 0.8px rgba(0, 0, 0, 0.006),
+    1.3px 1.3px 2px rgba(0, 0, 0, 0.008),
+    2.5px 2.5px 3.8px rgba(0, 0, 0, 0.01),
+    4.5px 4.5px 6.7px rgba(0, 0, 0, 0.012),
+    8.4px 8.4px 12.5px rgba(0, 0, 0, 0.014),
+    20px 20px 30px rgba(0, 0, 0, 0.02)
+  ;
+   }
+
+   .adminForm:last-child .btnAjouter input{
+    margin-top: 63px;
+   }
+
+   .btnAjouter input:hover{
+    background-color: #eebe00;
+    cursor: pointer;
    }
 
