@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS `acteur` (
   PRIMARY KEY (`id_acteur`),
   KEY `id_personne` (`id_personne`),
   CONSTRAINT `FK_acteur_personne` FOREIGN KEY (`id_personne`) REFERENCES `personne` (`id_personne`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 -- Listage des données de la table cinema_roman.acteur : ~5 rows (environ)
 /*!40000 ALTER TABLE `acteur` DISABLE KEYS */;
@@ -38,8 +38,8 @@ INSERT INTO `acteur` (`id_acteur`, `id_personne`) VALUES
 
 -- Listage de la structure de la table cinema_roman. associer
 CREATE TABLE IF NOT EXISTS `associer` (
-  `id_film` int(11) NOT NULL,
-  `id_genre` int(11) NOT NULL,
+  `id_film` int(11) DEFAULT NULL,
+  `id_genre` int(11) DEFAULT NULL,
   KEY `id_film` (`id_film`),
   KEY `id_genre` (`id_genre`),
   CONSTRAINT `FK_associer_film` FOREIGN KEY (`id_film`) REFERENCES `film` (`id_film`),
@@ -97,18 +97,18 @@ CREATE TABLE IF NOT EXISTS `film` (
   PRIMARY KEY (`id_film`),
   KEY `id_realisateur` (`id_realisateur`),
   CONSTRAINT `FK_film_realisateur` FOREIGN KEY (`id_realisateur`) REFERENCES `realisateur` (`id_realisateur`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table cinema_roman.film : ~6 rows (environ)
+-- Listage des données de la table cinema_roman.film : ~8 rows (environ)
 /*!40000 ALTER TABLE `film` DISABLE KEYS */;
 INSERT INTO `film` (`id_film`, `id_realisateur`, `titre`, `annee_sortie`, `duree`, `synopsis`, `note`, `affiche`) VALUES
 	(1, 0, 'Star Wars IV', '1977', 121, NULL, 0, 'https://static.fnac-static.com/multimedia/FR/Images_Produits/FR/fnac.com/Visual_Principal_340/7/2/0/5099709295027/tsp20121012190330/Star-Wars-Episode-4-Un-nouvel-espoir.jpg'),
 	(2, 1, 'Blade Runner', '1982', 111, NULL, 0, 'https://m.media-amazon.com/images/I/61dVSMH76yL._AC_SY606_.jpg'),
 	(3, 0, 'Star Wars V', '1980', 144, NULL, 0, 'https://static.fnac-static.com/multimedia/images_produits/ZoomPE/6/2/1/5099709295126/tsp20130828151225/Star-Wars-Episode-5-L-empire-contre-attaque.jpg'),
 	(4, 3, 'Indiana Jones', '1981', 148, NULL, 0, 'https://m.media-amazon.com/images/I/51BzzqecoTL._AC_.jpg'),
-	(5, 2, 'Solo: A Star Wars Story', '2018', 136, NULL, 0, 'https://static.fnac-static.com/multimedia/Images/86/86/0F/CB/13307782-1505-1540-1/tsp20191112145401/Solo-A-Star-Wars-Story-AFFICHE-CINEMA-ORIGINALE.jpg'),
+	(5, 2, 'Solo: A Star Wars Story', '2018', 136, NULL, 0, 'https://static.posters.cz/image/750/affiches-et-posters/solo-a-star-wars-story-solo-teaser-i58339.jpg'),
 	(6, 4, 'Cry Macho', '2021', 104, NULL, 0, 'https://fr.web.img6.acsta.net/c_310_420/pictures/21/08/06/12/10/2559362.jpg'),
-	(7, 0, 'Star Wars VI', '1983', 131, 'test', 3, 'https://www.cdiscount.com/pdt2/2/0/2/1/700x700/1ar4047253898202/rw/poster-star-wars-episode-vi-le-retour-du-jedi.jpg');
+	(7, 0, 'Star Wars VI', '1983', 131, 'test', 3, 'https://www.bdfugue.com/media/catalog/product/cache/1/image/400x/17f82f742ffe127f42dca9de82fb58b1/9/7/9782847896466_1_75_1.jpg');
 /*!40000 ALTER TABLE `film` ENABLE KEYS */;
 
 -- Listage de la structure de la table cinema_roman. genre
@@ -133,7 +133,7 @@ CREATE TABLE IF NOT EXISTS `personne` (
   `sexe` varchar(50) NOT NULL,
   `date_naissance` date NOT NULL,
   PRIMARY KEY (`id_personne`)
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 -- Listage des données de la table cinema_roman.personne : ~9 rows (environ)
 /*!40000 ALTER TABLE `personne` DISABLE KEYS */;
@@ -156,7 +156,7 @@ CREATE TABLE IF NOT EXISTS `realisateur` (
   PRIMARY KEY (`id_realisateur`),
   KEY `id_personne` (`id_personne`),
   CONSTRAINT `FK_realisateur_personne` FOREIGN KEY (`id_personne`) REFERENCES `personne` (`id_personne`)
-) ENGINE=InnoDB AUTO_INCREMENT=95 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 -- Listage des données de la table cinema_roman.realisateur : ~5 rows (environ)
 /*!40000 ALTER TABLE `realisateur` DISABLE KEYS */;
@@ -173,9 +173,9 @@ CREATE TABLE IF NOT EXISTS `role` (
   `id_role` int(11) NOT NULL AUTO_INCREMENT,
   `nom_personnage` varchar(50) NOT NULL,
   PRIMARY KEY (`id_role`)
-) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table cinema_roman.role : ~6 rows (environ)
+-- Listage des données de la table cinema_roman.role : ~7 rows (environ)
 /*!40000 ALTER TABLE `role` DISABLE KEYS */;
 INSERT INTO `role` (`id_role`, `nom_personnage`) VALUES
 	(0, 'Han Solo'),
