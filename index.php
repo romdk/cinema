@@ -69,13 +69,13 @@ if(isset($_GET['action'])){
                 $synopsis =filter_input(INPUT_POST,'synopsis',FILTER_SANITIZE_SPECIAL_CHARS);
                 $note =filter_input(INPUT_POST,'note',FILTER_SANITIZE_SPECIAL_CHARS);
                 $affiche =filter_input(INPUT_POST,'affiche',FILTER_SANITIZE_SPECIAL_CHARS);
+                $idGenre =filter_input(INPUT_POST,'genre',FILTER_SANITIZE_SPECIAL_CHARS);
+                $idRealisateur =filter_input(INPUT_POST,'realisateur',FILTER_SANITIZE_SPECIAL_CHARS);
 
-                if($titre && $anneeSortie && $duree && $synopsis && $note && $affiche){
-                    $ctrlCinema->ajoutFilm($titre,$anneeSortie,$duree,$synopsis,$note,$affiche);
+                if($titre && $anneeSortie && $duree && $synopsis && $note && $affiche && $idGenre && $idRealisateur){
+                    $ctrlCinema->ajoutFilm($titre,$anneeSortie,$duree,$synopsis,$note,$affiche,$idGenre,$idRealisateur);
                 }
-            }
-            
-            $ctrlCinema->listRealisateurs();    
+            }  
             $ctrlCinema->listFilms();    
         break;
     }
