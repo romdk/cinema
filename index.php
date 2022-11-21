@@ -75,7 +75,8 @@ if(isset($_GET['action'])){
                 }
             }
             
-            $ctrlCinema->listFilms();         
+            $ctrlCinema->listRealisateurs();    
+            $ctrlCinema->listFilms();    
         break;
     }
 }
