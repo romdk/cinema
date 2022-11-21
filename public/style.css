@@ -167,25 +167,17 @@ h2{
     background-color: #fecc00;
 }
 
-.detailFilm{
+.detail{
     position: relative;
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-}
-
-.tableFilm{
-    width: 100%;
     margin: 20px;
 }
 
-.tableCasting{
-    margin-left: 20px;
-}
-
 h3{
+    margin-top: 20px;
     width: 100%;
-    margin-left: 20px;
 }
 
 .adminForm{
