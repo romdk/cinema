@@ -1,26 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="public/style.css">
-    <title>Admin</title>
-</head>
-<body>
-    <nav>
-        <h1><i class="fa-solid fa-ticket-simple"></i><i class="fa-solid fa-film"></i>PDO Cinéma</h1>
-            <ul>
-                <li><a href="index.php?action=listFilms"><i class="fa-solid fa-caret-left"></i></i> retour</a></li>
-            </ul>
-        </nav>
+<?php ob_start() ?>
     <main>
 
 <div class='adminForm'>
@@ -49,6 +27,30 @@
         <label>
            Synopsis:
             <textarea name="synopsis"></textarea>
+        </label>
+    </div>
+    <div class="multiselect">
+        <div class="selectBox" onclick="showCheckboxes()">
+            <select name='genre'>
+                <option>Genre</option>
+            </select>
+            <div class="overSelect"></div>
+        </div>
+        <div id="checkboxes">
+            <label><input name='genre' type="checkbox" id="1" value='1'/>Science-fiction</label>
+            <label><input name='genre' type="checkbox" id="2" value='2'/>Action-aventure</label>
+        </div>
+    </div>
+    <div>
+        <label>
+            Réalisateur:
+            <select name="realisateur">
+                <option value="0">George Lucas</option>
+                <option value="1">Ridley Scott</option>
+                <option value="2">Ron howard</option>
+                <option value="3">Steven Spielberg</option>
+                <option value="4">Clint Eastwood</option>
+            </select>
         </label>
     </div>
     <div>
@@ -162,7 +164,12 @@
 </form>
 </div>
 </main>
-    
-</body>
-</html>
+
+<?php
+
+$titre = 'Ajouter éléments';
+$titre_secondaire = 'Ajouter éléments';
+$contenu = ob_get_clean();
+require 'view/template.php';
+?>
 
