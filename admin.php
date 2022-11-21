@@ -85,20 +85,18 @@
         <h4>Ajouter un réalisateur</h4>
 
         <form action="index.php?action=ajoutRealisateur" method="post">
-        <div class='row'>
-            <div>
+            <div class='row'>
                 <label>
                     Nom:
                     <input type="text" name="nom_personne">
                 </label>
             </div>
-            <div>
+            <div class='row'>
                 <label>
                     Prenom:
                     <input type="text" name="prenom_personne">
                 </label>
             </div>
-        </div>
         <div class='row'>
             <div>
                 <label>
@@ -126,20 +124,18 @@
         <h4>Ajouter un acteur</h4>
 
         <form action="index.php?action=ajoutActeur" method="post">
-        <div class='row'>
-            <div>
+            <div class='row'>
                 <label>
                     Nom:
                     <input type="text" name="nom_personne">
                 </label>
             </div>
-            <div>
+            <div class='row'>
                 <label>
                     Prenom:
                     <input type="text" name="prenom_personne">
                 </label>
             </div>
-        </div>
         <div class='row'>
             <div>
                 <label>
@@ -167,10 +163,24 @@
         <h4>Ajouter un rôle</h4>
 
         <form action="index.php?action=ajoutRole" method="post">
+            <div class='row'>
                 <label>
-                    Nom du personnage :
+                    Personnage :
                     <input type="text" name="nom_personnage">
                 </label>
+            </div>
+            <div class="row">
+                <label>
+                Acteur:
+                <select name="acteur">
+                    <option value="1">Harrison Ford</option>
+                    <option value="2">Mark Hamill</option>
+                    <option value="3">Alden Ehrenreich</option>
+                    <option value="4">Clint Eastwood</option>
+                    <option value="5">Carrie Fisher</option>
+                </select>
+            </label>
+            </div>
                 <div class='btnAjouter'>
                 <input type="submit" name="ajouterRole" value="Ajouter le role" >
             </div>
