@@ -1,5 +1,4 @@
 Film -> associer un realisateur, un/des genres, des acteurs
-Realisateur -> associer un/des films ?
 Acteurs -> associer un/des films, roles
 
 
