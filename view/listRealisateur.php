@@ -2,7 +2,12 @@
 
 <p> Il y a <?= $requete->rowCount() ?> réalisateurs</p>
 
-<table>
+<table class='table'>
+<thead>
+        <tr>
+            <th>NOM & PRENOM</th>
+        </tr>
+    </thead>
     <tbody>
         <?php
             foreach($requete->fetchAll() as $realisateur) { ?>
@@ -12,42 +17,6 @@
         <?php } ?>
     </tbody>
 </table>
-
-
-<h4>Ajouter un réalisateur</h4>
-
-<form action="index.php?action=ajoutRealisateur" method="post">
-    <div>
-        <label>
-            Nom:
-            <input type="text" name="nom_personne">
-        </label>
-    </div>
-    <div>
-        <label>
-            Prenom:
-            <input type="text" name="prenom_personne">
-        </label>
-    </div>
-    <div>
-        <label>
-            sexe:
-            <select name="sexe">
-                <option>Homme</option>
-                <option>Femme</option>
-            </select>
-        </label>
-    </div>
-    <div>
-        <label>
-            date:
-            <input type="date" name="date_naissance">
-        </label>
-    </div>
-    <div>
-    <input type="submit" name="ajouterRealisateur" value="Ajouter le realisateur" >
-    </div>
-</form>
 
 <?php
 
