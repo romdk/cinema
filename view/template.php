@@ -17,6 +17,8 @@
 <body>
     <nav>
     <h1><i class="fa-solid fa-ticket-simple"></i><i class="fa-solid fa-film"></i>PDO Cinéma</h1>
+    <div class='searchbar'><input type="text" placeholder="Rechercher un film, un réalisateur, un acteur..."><i class="fa-solid fa-magnifying-glass"></i></div>
+    
         <ul>
             <li><a href="index.php?action=listFilms">Films</a></li>
             <li><a href="index.php?action=listRealisateurs">Réalisateurs</a></li>
