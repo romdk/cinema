@@ -2,20 +2,21 @@
 $realisateur = $requete->fetch();
 $films = $requete2->fetchAll();
 ?>
-
-<p><?= $realisateur['prenom_personne'].' '.$realisateur['nom_personne'] ?></p>
-<p>Née le <?= $realisateur['date_naissance']?></p>
-<p>a réaliser les films suivants :</p>
-<table>
-    <tbody>
-        <?php
-            foreach($films as $film) { ?>
-            <tr>
-                <td><?= $film['titre'] ?></td>
-            </tr>
-        <?php } ?>
-    </tbody>
-</table>
+<div class='detail'>
+    <p><?= $realisateur['prenom_personne'].' '.$realisateur['nom_personne'] ?></p>
+    <p>Née le <?= $realisateur['date_naissance']?></p>
+    <p>a réaliser les films suivants :</p>
+    <table>
+        <tbody>
+            <?php
+                foreach($films as $film) { ?>
+                <tr>
+                    <td><?= $film['titre'] ?></td>
+                </tr>
+            <?php } ?>
+        </tbody>
+    </table>
+</div>
 
 <?php
 

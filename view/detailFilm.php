@@ -1,7 +1,7 @@
 <?php ob_start() ?>
 
-<div class='detailFilm'>
-<table class='tableFilm'>
+<div class='detail'>
+<table>
     <tbody>
         <?php
             $informations = $requete->fetch()
@@ -30,7 +30,7 @@
     </tbody>
 </table>
 
-<table class='tableCasting'>
+<table>
     <h3>CASTING</h3>
     <tbody>
         <?php

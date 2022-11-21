@@ -2,18 +2,19 @@
 $genre = $requete->fetch();
 $films = $requete2->fetchAll();
 ?>
-
-<p>Films du genre <?= $genre['nom_genre'] ?></p>
-<table>
-    <tbody>
-        <?php
-            foreach($films as $film) { ?>
-            <tr>
-                <td><?= $film['titre'] ?></td>
-            </tr>
-        <?php } ?>
-    </tbody>
-</table>
+<div class='detail'>
+    <p>Films du genre <?= $genre['nom_genre'] ?></p>
+    <table>
+        <tbody>
+            <?php
+                foreach($films as $film) { ?>
+                <tr>
+                    <td><?= $film['titre'] ?></td>
+                </tr>
+            <?php } ?>
+        </tbody>
+    </table>
+</div>
 
 <?php
 
