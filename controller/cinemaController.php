@@ -209,12 +209,23 @@ class CinemaController {
         '); 
     }
 
-    public function ajoutFilm($titre,$anneeSortie,$duree,$synopsis,$note,$affiche){
+    public function ajoutFilm($titre,$anneeSortie,$duree,$synopsis,$note,$affiche,$idGenre,$idRealisateur){
         $pdo = Connect::seConnecter();
         $requete = $pdo->query('
-        INSERT INTO film(titre,annee_sortie,duree,synopsis,note,affiche)
-        VALUES("'.$titre.'","'.$anneeSortie.'","'.$duree.'","'.$synopsis.'","'.$note.'","'.$affiche.'")
-        '); 
+        INSERT INTO film(titre,annee_sortie,duree,synopsis,note,affiche,id_realisateur)
+        VALUES("'.$titre.'","'.$anneeSortie.'","'.$duree.'","'.$synopsis.'","'.$note.'","'.$affiche.'","'.$idRealisateur.'")
+        ');
+
+        $requete2 = $pdo->query('
+        INSERT INTO associer(id_film)
+        SELECT MAX(id_film) FROM film        
+        ');
+
+        $requete3 = $pdo->query('
+        UPDATE associer
+        SET id_genre = '.$idGenre.'
+        WHERE id_genre IS NULL
+        ');
     }
 
 
