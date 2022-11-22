@@ -185,14 +185,29 @@ class CinemaController {
                 INSERT INTO role(nom_personnage)
                 VALUES ("'.$nomPersonnage.'")
                 ');
-
-                $requete2 = $pdo->query('
-                INSERT INTO figurer
-                VALUES()
-                ')
             }
             header("Location:index.php?action=listRoles");
         }        
+    }
+
+    public function ajoutCasting(){
+        if(isset($_POST['ajouterCasting'])){
+            $film = filter_input(INPUT_POST,'film',FILTER_SANITIZE_SPECIAL_CHARS);
+            $personnage = filter_input(INPUT_POST,'personnage',FILTER_SANITIZE_SPECIAL_CHARS);
+            $acteurs = filter_input(INPUT_POST,'acteur',FILTER_DEFAULT,FILTER_FORCE_ARRAY);
+
+            foreach($acteurs as $acteur){
+                if($film && $personnage && $acteur){
+                    $pdo = Connect::seConnecter();
+
+                    $requete = $pdo->query('
+                    INSERT INTO figurer(id_film,id_acteur,id_role)
+                    VALUES("'.$film.'","'.$acteur.'","'.$personnage.'")
+                    ');
+                }
+            }
+            header("Location:index.php?action=detailFilm&id=$film");
+        }
     }
 
     public function ajoutRealisateur(){
@@ -253,12 +268,11 @@ class CinemaController {
             $synopsis =filter_input(INPUT_POST,'synopsis',FILTER_SANITIZE_SPECIAL_CHARS);
             $note =filter_input(INPUT_POST,'note',FILTER_SANITIZE_SPECIAL_CHARS);
             $affiche =filter_input(INPUT_POST,'affiche',FILTER_SANITIZE_SPECIAL_CHARS);
-            // $idGenre =filter_input(INPUT_POST,'genre[]',FILTER_SANITIZE_SPECIAL_CHARS);
-            $Genres = $_POST['genre'];
+            $genres =filter_input(INPUT_POST,'genre',FILTER_DEFAULT,FILTER_FORCE_ARRAY);
             $idRealisateur =filter_input(INPUT_POST,'realisateur',FILTER_VALIDATE_INT);
                    
         
-            if($titre && $anneeSortie && $duree && $synopsis && $affiche && $Genres){
+            if($titre && $anneeSortie && $duree && $synopsis && $affiche && $genres){
                 $pdo = Connect::seConnecter();
                 $requete = $pdo->query('
                 INSERT INTO film(titre,annee_sortie,duree,synopsis,note,affiche,id_realisateur)
@@ -266,7 +280,7 @@ class CinemaController {
                 ');
                 
                 $id = $pdo->lastInsertId();
-                foreach($Genres as $idGenre){
+                foreach($genres as $idGenre){
             
                     $requete2 = $pdo->query('
                     INSERT INTO associer(id_film)
@@ -281,6 +295,7 @@ class CinemaController {
                 }
             } 
             header("Location:index.php?action=listFilms");
+            // var_dump($genres);
         }
     }
 }
