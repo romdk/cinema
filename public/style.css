@@ -227,28 +227,28 @@ h3{
   ;
 }
 
-#realisateurActeurRole{
+.doubleForm{
     display: flex;
     justify-content: space-e;
     width: 100%;
 }
 
-#realisateurActeurRole .adminForm:nth-child(n){
-    width: 328px;
+.doubleForm .adminForm:nth-child(n){
+    width: 492px;
     margin-top: 0;
 }
 
-#realisateurActeurRole .adminForm:nth-child(1){
+.doubleForm .adminForm:nth-child(1){
     margin-left: 20px;
     margin-right: 10px;
 }
 
-#realisateurActeurRole .adminForm:nth-child(2){
+.doubleForm .adminForm:nth-child(2){
     margin-right: 10px;
     margin-left: 10px;
 }
 
-#realisateurActeurRole .adminForm:nth-child(3){
+.doubleForm .adminForm:nth-child(3){
     margin-right: 20px;
     margin-left: 10px;
 }
@@ -295,7 +295,7 @@ h3{
     margin-top: 20px;
    }
 
-   .row:nth-child(3){
+   .adminForm:nth-child(1) .row:nth-child(3){
     margin-top: 40px;
    }
 
