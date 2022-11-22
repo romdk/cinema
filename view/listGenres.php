@@ -1,23 +1,24 @@
 <?php ob_start() ?>
 
 <p> Il y a <?= $requete->rowCount() ?> genres</p>
-
-<table class='table'>
-<thead>
-        <tr>
-            <th>GENRE</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php
-            foreach($requete->fetchAll() as $genre) { ?>
+<div id='listGenres'>
+    <table class='table'>
+    <thead>
             <tr>
-                <td><a href="index.php?action=detailGenre&id=<?= $genre['id_genre'] ?>"><?= $genre['nom_genre'] ?></a></td>
-                
+                <th>GENRE</th>
             </tr>
-        <?php } ?>
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            <?php
+                foreach($requete->fetchAll() as $genre) { ?>
+                <tr>
+                    <td><a href="index.php?action=detailGenre&id=<?= $genre['id_genre'] ?>"><?= $genre['nom_genre'] ?></a></td>
+                    
+                </tr>
+            <?php } ?>
+        </tbody>
+    </table>
+</div>
 
 <?php
 

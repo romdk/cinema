@@ -1,22 +1,23 @@
 <?php ob_start() ?>
 
 <p> Il y a <?= $requete->rowCount() ?> réalisateurs</p>
-
-<table class='table'>
-<thead>
-        <tr>
-            <th>NOM & PRENOM</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php
-            foreach($requete->fetchAll() as $realisateur) { ?>
+<div id='listRealisateur'></div>
+    <table class='table'>
+    <thead>
             <tr>
-                <td><a href="index.php?action=detailRealisateur&id=<?= $realisateur['id_realisateur'] ?>"><?= $realisateur['prenom_personne'].' '.$realisateur['nom_personne'] ?></a></td>
+                <th>NOM & PRENOM</th>
             </tr>
-        <?php } ?>
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            <?php
+                foreach($requete->fetchAll() as $realisateur) { ?>
+                <tr>
+                    <td><a href="index.php?action=detailRealisateur&id=<?= $realisateur['id_realisateur'] ?>"><?= $realisateur['prenom_personne'].' '.$realisateur['nom_personne'] ?></a></td>
+                </tr>
+            <?php } ?>
+        </tbody>
+    </table>
+</div>
 
 <?php
 

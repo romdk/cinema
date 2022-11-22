@@ -1,24 +1,25 @@
 <?php ob_start() ?>
 
 <p> Il y a <?= $requete->rowCount() ?> films</p>
-
-<table class='table'>
-    <thead>
-        <tr>
-            <th>TITRE</th>
-            <th>ANNEE DE SORTIE</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php
-            foreach($requete->fetchAll() as $film) { ?>
+<div id='listFilms'>
+    <table class='table'>
+        <thead>
             <tr>
-                <td><a href="index.php?action=detailFilm&id=<?= $film['id_film'] ?>"><?= $film['titre'] ?></a></td>
-                <td><?= $film['annee_sortie'] ?></td>
+                <th>TITRE</th>
+                <th>ANNEE DE SORTIE</th>
             </tr>
-        <?php } ?>
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            <?php
+                foreach($requete->fetchAll() as $film) { ?>
+                <tr>
+                    <td><a href="index.php?action=detailFilm&id=<?= $film['id_film'] ?>"><?= $film['titre'] ?></a></td>
+                    <td><?= $film['annee_sortie'] ?></td>
+                </tr>
+            <?php } ?>
+        </tbody>
+    </table>
+</div>
 
 <?php
 

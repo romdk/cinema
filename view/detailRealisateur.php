@@ -2,7 +2,7 @@
 $realisateur = $requete->fetch();
 $films = $requete2->fetchAll();
 ?>
-<div class='detail'>
+<div id='detailRealisateur'>
     <p><?= $realisateur['prenom_personne'].' '.$realisateur['nom_personne'] ?></p>
     <p>Née le <?= $realisateur['date_naissance']?></p>
     <p>a réaliser les films suivants :</p>

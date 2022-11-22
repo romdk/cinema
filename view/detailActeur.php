@@ -2,7 +2,8 @@
 $acteur = $requete->fetch();
 $films = $requete2->fetchAll();
 ?>
-<div class='detail'>
+
+<div id='detailActeur'>
     <p><?= $acteur['prenom_personne'].' '.$acteur['nom_personne'] ?></p>
     <p>Née le <?= $acteur['date_naissance']?></p>
     <p>a figurer dans les films suivants :</p>

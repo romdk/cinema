@@ -2,7 +2,7 @@
 $genre = $requete->fetch();
 $films = $requete2->fetchAll();
 ?>
-<div class='detail'>
+<div id='detailGenre'>
     <p>Films du genre <?= $genre['nom_genre'] ?></p>
     <table>
         <tbody>

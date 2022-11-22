@@ -3,7 +3,7 @@ $role = $requete->fetch();
 $acteurs = $requete2->fetchAll();
 $films = $requete3->fetchAll();
 ?>
-<div class='detail'>
+<div id='detailRole'>
     <span><?= $role['nom_personnage'] ?> a été interpreter par :
     <?php
         foreach($acteurs as $acteur) { ?>
