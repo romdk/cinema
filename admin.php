@@ -1,77 +1,79 @@
 <?php ob_start() ?>
     <div id='admin'>
         <div class='singleForm'>
-            <h4>Ajouter un film</h4>
+            <div class='adminForm'>
+                <h4>Ajouter un film</h4>
 
-            <form action='index.php?action=ajoutFilm' method='post'>
+                <form action='index.php?action=ajoutFilm' method='post'>
 
-            <div class='row'>    
-                <label>
-                    Titre:
-                    <input type='text' name='titre'>
-                </label>
-
-                <label>
-                    Année de sortie:
-                    <input type='text' name='annee_sortie'>
-                </label>
-
-                <label>
-                    Réalisateur:
-                    <select name='realisateur'>
-                        <option value='0'>George Lucas</option>
-                        <option value='1'>Ridley Scott</option>
-                        <option value='2'>Ron howard</option>
-                        <option value='3'>Steven Spielberg</option>
-                        <option value='4'>Clint Eastwood</option>
-                    </select>
-                </label>
-            </div>
-            <div class='row'>    
-                <div class='synopsis'>
+                <div class='row'>    
                     <label>
-                    Synopsis:
-                        <textarea name='synopsis'></textarea>
+                        Titre:
+                        <input type='text' name='titre'>
                     </label>
-                </div>
-            </div>
-            <div class='row'>
-                <label>Genre:
-                    <select name='genre[]' multiple>
-                        <option value='1'>Science-fiction</option>
-                        <option value='2'>Action-aventure</option>
-                    </select>
-                </label>
-                <div>
+
                     <label>
-                        Durée(minutes):
-                        <input type='text' name='duree'>
+                        Année de sortie:
+                        <input type='text' name='annee_sortie'>
                     </label>
-                </div>
-                <div>
+
                     <label>
-                        Note:
-                        <select name='note'>
-                            <option>0</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                        Réalisateur:
+                        <select name='realisateur'>
+                            <option value='0'>George Lucas</option>
+                            <option value='1'>Ridley Scott</option>
+                            <option value='2'>Ron howard</option>
+                            <option value='3'>Steven Spielberg</option>
+                            <option value='4'>Clint Eastwood</option>
                         </select>
                     </label>
                 </div>
-                <div>
-                    <label>
-                        Affiche:
-                        <input type='text' name='affiche' placeholder='Inserer url de l'affiche'>
+                <div class='row'>    
+                    <div class='synopsis'>
+                        <label>
+                        Synopsis:
+                            <textarea name='synopsis'></textarea>
+                        </label>
+                    </div>
+                </div>
+                <div class='row'>
+                    <label>Genre:
+                        <select name='genre[]' multiple>
+                            <option value='1'>Science-fiction</option>
+                            <option value='2'>Action-aventure</option>
+                        </select>
                     </label>
+                    <div>
+                        <label>
+                            Durée(minutes):
+                            <input type='text' name='duree'>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            Note:
+                            <select name='note'>
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            Affiche:
+                            <input type='text' name='affiche' placeholder='Inserer url de l'affiche'>
+                        </label>
+                    </div>
                 </div>
+                    <div class='btnAjouter'>
+                        <input type='submit' name='ajouterFilm' value='Ajouter le film' >
+                    </div>
+                </form> 
             </div>
-                <div class='btnAjouter'>
-                    <input type='submit' name='ajouterFilm' value='Ajouter le film' >
-                </div>
-            </form> 
         </div>
         <div class='doubleForm'>
             <div class='adminForm'>
