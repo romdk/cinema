@@ -197,14 +197,12 @@ class CinemaController {
             $acteurs = filter_input(INPUT_POST,'acteur',FILTER_DEFAULT,FILTER_FORCE_ARRAY);
 
             foreach($acteurs as $acteur){
-                if($film && $personnage && $acteur){
-                    $pdo = Connect::seConnecter();
+                $pdo = Connect::seConnecter();
 
-                    $requete = $pdo->query('
-                    INSERT INTO figurer(id_film,id_acteur,id_role)
-                    VALUES("'.$film.'","'.$acteur.'","'.$personnage.'")
-                    ');
-                }
+                $requete = $pdo->query('
+                INSERT INTO figurer(id_film,id_acteur,id_role)
+                VALUES("'.$film.'","'.$acteur.'","'.$personnage.'")
+                ');
             }
             header("Location:index.php?action=detailFilm&id=$film");
         }
