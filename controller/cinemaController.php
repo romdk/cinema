@@ -175,61 +175,112 @@ class CinemaController {
         require 'view/detailRole.php';
     }
 
-    public function ajoutRole($nomPersonnage){
-        $pdo = Connect::seConnecter();
-        $requete = $pdo->query('
-        INSERT INTO role(nom_personnage)
-        VALUES ("'.$nomPersonnage.'")
-        ');
-    }
+    public function ajoutRole(){
+        if(isset($_POST['ajouterRole'])){
+            $nomPersonnage =filter_input(INPUT_POST,'nom_personnage',FILTER_SANITIZE_SPECIAL_CHARS);
 
-    public function ajoutPersonne($nomPersonne,$prenomPersonne,$sexe,$dateNaissance){
-        $pdo = Connect::seConnecter();
-        $requete = $pdo->query('
-        INSERT INTO personne(nom_personne,prenom_personne,sexe,date_naissance)
-        VALUES ("'.$nomPersonne.'","'.$prenomPersonne.'","'.$sexe.'","'.$dateNaissance.'")
-        ');
+            if($nomPersonnage){
+                $pdo = Connect::seConnecter();
+                $requete = $pdo->query('
+                INSERT INTO role(nom_personnage)
+                VALUES ("'.$nomPersonnage.'")
+                ');
+
+                $requete2 = $pdo->query('
+                INSERT INTO figurer
+                VALUES()
+                ')
+            }
+            header("Location:index.php?action=listRoles");
+        }        
     }
 
     public function ajoutRealisateur(){
-        $pdo = Connect::seConnecter();
-        $requete = $pdo->query('
-        INSERT INTO realisateur(id_personne)
-        SELECT MAX(id_personne)
-        FROM personne
-        '); 
+        if(isset($_POST['ajouterRealisateur'])){
+            $nomPersonne =filter_input(INPUT_POST,'nom_personne',FILTER_SANITIZE_SPECIAL_CHARS);
+            $prenomPersonne =filter_input(INPUT_POST,'prenom_personne',FILTER_SANITIZE_SPECIAL_CHARS);
+            $sexe =filter_input(INPUT_POST,'sexe',FILTER_SANITIZE_SPECIAL_CHARS);
+            $dateNaissance =filter_input(INPUT_POST,'date_naissance',FILTER_SANITIZE_SPECIAL_CHARS);
+
+            if($nomPersonne && $prenomPersonne && $sexe && $dateNaissance){                
+                $pdo = Connect::seConnecter();
+                
+                $requete = $pdo->query('
+                INSERT INTO personne(nom_personne,prenom_personne,sexe,date_naissance)
+                VALUES ("'.$nomPersonne.'","'.$prenomPersonne.'","'.$sexe.'","'.$dateNaissance.'")
+                ');
+                
+                $id = $pdo->lastInsertId();
+                $requete2 = $pdo->query('
+                INSERT INTO realisateur(id_personne)
+                VALUES("'.$id.'") 
+                ');
+            }
+            header("Location:index.php?action=listRealisateurs");
+        }
     }
 
     public function ajoutActeur(){
-        $pdo = Connect::seConnecter();
-        $requete = $pdo->query('
-        INSERT INTO acteur(id_personne)
-        SELECT MAX(id_personne)
-        FROM personne
-        '); 
+        if(isset($_POST['ajouterActeur'])){
+            $nomPersonne =filter_input(INPUT_POST,'nom_personne',FILTER_SANITIZE_SPECIAL_CHARS);
+            $prenomPersonne =filter_input(INPUT_POST,'prenom_personne',FILTER_SANITIZE_SPECIAL_CHARS);
+            $sexe =filter_input(INPUT_POST,'sexe',FILTER_SANITIZE_SPECIAL_CHARS);
+            $dateNaissance =filter_input(INPUT_POST,'date_naissance',FILTER_SANITIZE_SPECIAL_CHARS);
+
+            if($nomPersonne && $prenomPersonne && $sexe && $dateNaissance){
+                $pdo = Connect::seConnecter();
+
+                $requete = $pdo->query('
+                INSERT INTO personne(nom_personne,prenom_personne,sexe,date_naissance)
+                VALUES ("'.$nomPersonne.'","'.$prenomPersonne.'","'.$sexe.'","'.$dateNaissance.'")
+                ');
+
+                $id = $pdo->lastInsertId();
+                $requete2 = $pdo->query('
+                INSERT INTO acteur(id_personne)
+                VALUES("'.$id.'") 
+                '); 
+            }
+            header("Location:index.php?action=listActeurs");
+        }
     }
 
-    public function ajoutFilm($titre,$anneeSortie,$duree,$synopsis,$note,$affiche,$idGenre,$idRealisateur){
-        $pdo = Connect::seConnecter();
-        $requete = $pdo->query('
-        INSERT INTO film(titre,annee_sortie,duree,synopsis,note,affiche,id_realisateur)
-        VALUES("'.$titre.'","'.$anneeSortie.'","'.$duree.'","'.$synopsis.'","'.$note.'","'.$affiche.'","'.$idRealisateur.'")
-        ');
-
-        $requete2 = $pdo->query('
-        INSERT INTO associer(id_film)
-        SELECT MAX(id_film) FROM film        
-        ');
-
-        $requete3 = $pdo->query('
-        UPDATE associer
-        SET id_genre = '.$idGenre.'
-        WHERE id_genre IS NULL
-        ');
+    public function ajoutFilm(){
+        if(isset($_POST['ajouterFilm'])){
+            $titre =filter_input(INPUT_POST,'titre',FILTER_SANITIZE_SPECIAL_CHARS);
+            $anneeSortie =filter_input(INPUT_POST,'annee_sortie',FILTER_SANITIZE_SPECIAL_CHARS);
+            $duree =filter_input(INPUT_POST,'duree',FILTER_SANITIZE_SPECIAL_CHARS);
+            $synopsis =filter_input(INPUT_POST,'synopsis',FILTER_SANITIZE_SPECIAL_CHARS);
+            $note =filter_input(INPUT_POST,'note',FILTER_SANITIZE_SPECIAL_CHARS);
+            $affiche =filter_input(INPUT_POST,'affiche',FILTER_SANITIZE_SPECIAL_CHARS);
+            // $idGenre =filter_input(INPUT_POST,'genre[]',FILTER_SANITIZE_SPECIAL_CHARS);
+            $Genres = $_POST['genre'];
+            $idRealisateur =filter_input(INPUT_POST,'realisateur',FILTER_VALIDATE_INT);
+                   
+        
+            if($titre && $anneeSortie && $duree && $synopsis && $affiche && $Genres){
+                $pdo = Connect::seConnecter();
+                $requete = $pdo->query('
+                INSERT INTO film(titre,annee_sortie,duree,synopsis,note,affiche,id_realisateur)
+                VALUES("'.$titre.'","'.$anneeSortie.'","'.$duree.'","'.$synopsis.'","'.$note.'","'.$affiche.'","'.$idRealisateur.'")
+                ');
+                
+                $id = $pdo->lastInsertId();
+                foreach($Genres as $idGenre){
+            
+                    $requete2 = $pdo->query('
+                    INSERT INTO associer(id_film)
+                    VALUES("'.$id.'")        
+                    ');
+            
+                    $requete3 = $pdo->query('
+                    UPDATE associer
+                    SET id_genre = '.$idGenre.'
+                    WHERE id_genre IS NULL
+                    ');
+                }
+            } 
+            header("Location:index.php?action=listFilms");
+        }
     }
-
-
-
-
-
 }
