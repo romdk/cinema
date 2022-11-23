@@ -341,12 +341,80 @@ h3{
     color: #474747;
     transition: .2s;
 }
+/* --------------------------------------DETAILS REALISATEUR------------------------------------------ */
+#detailRealisateur{
+    background-color: #f2f2f2;
+    width: 100%;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+#detailRealisateur p:nth-child(1){
+    color:#474747;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+#detailRealisateur p:nth-child(3){
+    margin-top: 20px;
+    font-weight: 500;
+}
 
 
+/* --------------------------------------DETAILS ACTEUR------------------------------------------ */
+#detailActeur{
+    background-color: #f2f2f2;
+    width: 100%;
+    border-radius: 5px;
+    padding: 20px;
+}
 
+#detailActeur p:nth-child(1){
+    color:#474747;
+    font-size: 2rem;
+    font-weight: 600;
+}
 
+#detailActeur p:nth-child(3){
+    margin-top: 20px;
+    font-weight: 500;
+}
+/* --------------------------------------DETAILS GENRE------------------------------------------ */
+#detailGenre{
+    background-color: #f2f2f2;
+    width: 100%;
+    border-radius: 5px;
+    padding: 20px;
+}
 
-/* -------------------------------------------------------------------------------- */
+#detailGenre p:nth-child(1){
+    color:#474747;
+    font-size: 2rem;
+    font-weight: 600;
+}
+/* --------------------------------------DETAILS ROLE------------------------------------------ */
+#detailRole{
+    background-color: #f2f2f2;
+    width: 100%;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+#detailRole p:nth-child(1){
+    color:#474747;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+#detailRole p:nth-child(2){
+    margin-top: 10px;    
+}
+
+#detailRole p:nth-child(5){
+    margin-top: 20px;
+    /* font-size: 2rem; */
+    font-weight: 500;
+}
 /* --------------------------------------ADMIN------------------------------------------ */
 
 .adminForm{
