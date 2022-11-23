@@ -4,13 +4,13 @@ $acteurs = $requete2->fetchAll();
 $films = $requete3->fetchAll();
 ?>
 <div id='detailRole'>
-    <span><?= $role['nom_personnage'] ?> a été interpreter par :
+    <p><?= $role['nom_personnage'] ?> a été interpreter par :
     <?php
         foreach($acteurs as $acteur) { ?>
-            <span><?= $acteur['prenom_personne'].' '.$acteur['nom_personne'].','?></span>
+            <p><?= $acteur['prenom_personne'].' '.$acteur['nom_personne']?></p>
     <?php } ?>
-        </span>
-    <span>dans le(s) films suivants: </span>
+        </p>
+    <p>dans le(s) films suivants: </p>
     <table>
         <tbody>
             <?php
@@ -25,8 +25,8 @@ $films = $requete3->fetchAll();
 
 <?php
 
-$titre = 'Details du Réalisateur';
-$titre_secondaire = 'Details du Réalisateur';
+$titre = 'Details du Rôle';
+$titre_secondaire = 'Details du Rôle';
 $contenu = ob_get_clean();
 require 'view/template.php';
 ?>
