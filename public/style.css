@@ -315,6 +315,10 @@ h3{
     -webkit-text-fill-color: transparent;
 }
 
+#note{
+    margin-left: 5px;
+}
+
 #detailFilm .synopsis{
     width: 50%;
     margin-top: 20px;
@@ -334,7 +338,8 @@ h3{
     justify-content: center;
     align-items: center;
     margin-left: 6px;   
-    width: 40px;
+    padding: 0 5px;
+    width: fit-content;
     height: 40px;
     background-color: #eebe00;
     border-radius: 10px;
@@ -346,11 +351,16 @@ h3{
     cursor: pointer;
 }
 
-#detailFilm .btnLike:hover .fa-thumbs-up{
+#detailFilm .btnLike:hover .fa-thumbs-up {
+    color: #eebe00;
+}
+
+#detailFilm .btnLike:hover {
     color: #eebe00;
 }
 
 #detailFilm .btnLike .fa-thumbs-up{
+    margin-right: 5px;
     font-size: 1.3rem;
     color: #474747;
     transition: .2s;
