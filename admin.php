@@ -41,6 +41,7 @@
                         <select name='genre[]' multiple>
                             <option value='1'>Science-fiction</option>
                             <option value='2'>Action-aventure</option>
+                            <option value='3'>Western</option>
                         </select>
                     </label>
                     <div>
@@ -185,6 +186,7 @@
                                 <option value='4'>Indiana Jones</option>
                                 <option value='5'>Solo: A Star Wars Story</option>
                                 <option value='6'>Cry Macho</option>
+                                <option value='7'>Star Wars VI</option>
                             </select>
                         </label>
                     </div>
