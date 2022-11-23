@@ -5,7 +5,7 @@ $films = $requete2->fetchAll();
 <div id='detailRealisateur'>
     <p><?= $realisateur['prenom_personne'].' '.$realisateur['nom_personne'] ?></p>
     <p>Née le <?= $realisateur['date_naissance']?></p>
-    <p>a réaliser les films suivants :</p>
+    <p>A réaliser les films suivants :</p>
     <table>
         <tbody>
             <?php
