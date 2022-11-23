@@ -11,7 +11,6 @@
                     <div class='infos'>
                         <p><?= $informations['annee_sortie'].' / '.$informations['duree'].' minutes / '.$informations['nom_genre'] ?></p>
                         <p>Réalisé par <?= $informations['prenom_personne'].' '.$informations['nom_personne'] ?></p>
-                        <p id='note'><?= $informations['note'] ?></p>
                         <div class="etoiles">
                             <span id='etoile1' class="fa fa-star "></span>
                             <span id='etoile2' class="fa fa-star "></span>
@@ -19,6 +18,7 @@
                             <span id='etoile4' class="fa fa-star "></span>
                             <span id='etoile5' class="fa fa-star"></span>
                         </div>
+                        <span id='note'><?= $informations['note'] ?></span>
                         <div class='casting'>
                         <p>CASTING</p>
                         <?php
@@ -27,7 +27,7 @@
                             <p><?= $acteur['prenom_personne'].' '.$acteur['nom_personne'] ?></p>
                         <?php } ?>
                         </div>
-                        <a href="index.php?action=ajoutLike&id=<?=$id?>"><div class='btnLike'><i class="fa-regular fa-thumbs-up"></i></div></a>  
+                        <a href="index.php?action=ajoutLike&id=<?=$id?>"><div class='btnLike'><i class="fa-regular fa-thumbs-up"></i><?= $informations['likes'] ?></div></a>  
                     </div>  
                 </div>
                 <div class='synopsis'>
