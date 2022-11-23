@@ -508,6 +508,7 @@ h3{
         4.5px 4.5px 6.7px rgba(0, 0, 0, 0.012),
         8.4px 8.4px 12.5px rgba(0, 0, 0, 0.014),
         20px 20px 30px rgba(0, 0, 0, 0.02);
+        transition: .2s;
    }
     .doubleForm:nth-child(3) .adminForm:nth-child(1) .btnAjouter input{
         margin-top: 148px;
