@@ -427,6 +427,16 @@ h3{
     border: none;
 
 }
+
+#admin textarea{
+    border-radius: 3px;
+    border: none;
+    resize: none;
+}
+
+#admin textarea:focus, input:focus, select:focus{
+    outline-color:#eebe00;
+}
 .adminForm{
     justify-content: start;
     position: relative;
