@@ -56,12 +56,16 @@ class CinemaController {
     public function detailFilm($id){
         $pdo = Connect::seConnecter();
         $requete = $pdo->prepare('
-        SELECT titre, annee_sortie, duree, synopsis, note, affiche, prenom_personne, nom_personne
+        SELECT titre, annee_sortie, duree, synopsis, note, affiche, prenom_personne, nom_personne, nom_genre
         FROM film
         INNER JOIN realisateur
         ON film.id_realisateur = realisateur.id_realisateur
         INNER JOIN personne
         ON realisateur.id_personne = personne.id_personne
+        INNER JOIN associer
+        ON film.id_film = associer.id_film
+        INNER JOIN genre
+        ON associer.id_genre = genre.id_genre
         WHERE film.id_film = :id
         ');
         $requete->execute(['id' => $id]);
@@ -293,7 +297,17 @@ class CinemaController {
                 }
             } 
             header("Location:index.php?action=listFilms");
-            // var_dump($genres);
         }
+    }
+
+    public function ajoutLike($id){
+        $pdo = Connect::seConnecter();
+        $requete = $pdo->prepare('
+        UPDATE film
+        SET likes = likes+1
+        WHERE film.id_film = :id
+        ');
+        $requete->execute(['id' => $id]);
+        header("Location:index.php?action=detailFilm&id=$id");
     }
 }
