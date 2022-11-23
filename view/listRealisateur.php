@@ -1,7 +1,7 @@
 <?php ob_start() ?>
 
 <p> Il y a <?= $requete->rowCount() ?> réalisateurs</p>
-<div id='listRealisateur'></div>
+<div id='listRealisateurs'>
     <table class='table'>
     <thead>
             <tr>
