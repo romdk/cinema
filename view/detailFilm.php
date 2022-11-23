@@ -11,7 +11,14 @@
                     <div class='infos'>
                         <p><?= $informations['annee_sortie'].' / '.$informations['duree'].' minutes / '.$informations['nom_genre'] ?></p>
                         <p>Réalisé par <?= $informations['prenom_personne'].' '.$informations['nom_personne'] ?></p>
-                        <p>Note: <?= $informations['note'] ?>/5</p>
+                        <p id='note'><?= $informations['note'] ?></p>
+                        <div class="etoiles">
+                            <span id='etoile1' class="fa fa-star "></span>
+                            <span id='etoile2' class="fa fa-star "></span>
+                            <span id='etoile3' class="fa fa-star "></span>
+                            <span id='etoile4' class="fa fa-star "></span>
+                            <span id='etoile5' class="fa fa-star"></span>
+                        </div>
                         <div class='casting'>
                         <p>CASTING</p>
                         <?php

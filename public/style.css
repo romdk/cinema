@@ -301,6 +301,20 @@ h3{
     font-weight: 600;
 }
 
+.fa-star{
+    color: #cccccc;
+}
+
+.full {
+    color: #fecc00;
+}
+
+.half {
+    background: -webkit-linear-gradient(0deg,#fecc00 50%, #cccccc 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 #detailFilm .synopsis{
     width: 50%;
     margin-top: 20px;
@@ -518,4 +532,7 @@ h3{
         background-color: #eebe00;
         cursor: pointer;
    }
+
+   
+
 
