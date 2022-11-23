@@ -1,45 +1,33 @@
 <?php ob_start() ?>
 
 <div id='detailFilm'>
-    <table>
-        <tbody>
             <?php
                 $informations = $requete->fetch()
             ?>
-                <tr>
-                    <td><?= $informations['titre'] ?></td>
-                </tr>
-                <tr>
-                    <td><?= $informations['annee_sortie'] ?></td>
-                </tr>
-                <tr>
-                    <td>Réalisé par: <?= $informations['prenom_personne'].' '.$informations['nom_personne'] ?></td>
-                </tr>
-                <tr>
-                    <td>Durée: <?= $informations['duree'] ?> minutes</td>
-                </tr>
-                <tr>
-                    <td>Synopsis: <?= $informations['synopsis'] ?></td>
-                </tr>
-                <tr>
-                    <td>Note: <?= $informations['note'] ?>/5</td>
-                </tr>
-                <tr>
-                    <td><img src="<?= $informations['affiche'] ?>" alt="affiche du film <?= $informations['titre'] ?>"></td>
-                </tr>
-        </tbody>
-    </table>
-    <table>
-        <h3>CASTING</h3>
-        <tbody>
-            <?php
-                foreach($requete2->fetchAll() as $acteur) { ?>
-                <tr>
-                    <td><?= $acteur['prenom_personne'].' '.$acteur['nom_personne'] ?></td>
-                </tr>
-                <?php } ?>
-            </tbody>
-        </table>
+                
+                <p class='titre'><?= $informations['titre'] ?></p>
+                <div class='card'>
+                    <div class='affiche'><img src="<?= $informations['affiche'] ?>" alt="affiche du film <?= $informations['titre'] ?>"></div>
+                    <div class='infos'>
+                        <p><?= $informations['annee_sortie'].' / '.$informations['duree'].' minutes / '.$informations['nom_genre'] ?></p>
+                        <p>Réalisé par <?= $informations['prenom_personne'].' '.$informations['nom_personne'] ?></p>
+                        <p>Note: <?= $informations['note'] ?>/5</p>
+                        <div class='casting'>
+                        <p>CASTING</p>
+                        <?php
+                        foreach($requete2->fetchAll() as $acteur) { ?>
+                    
+                            <p><?= $acteur['prenom_personne'].' '.$acteur['nom_personne'] ?></p>
+                        <?php } ?>
+                        </div>
+                        <a href="index.php?action=ajoutLike&id=<?=$id?>"><div class='btnLike'><i class="fa-regular fa-thumbs-up"></i></div></a>  
+                    </div>  
+                </div>
+                <div class='synopsis'>
+                    <p>Synopsis: <?= $informations['synopsis'] ?></p>
+                </div>
+                
+
 </div>
 
 
