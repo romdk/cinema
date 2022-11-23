@@ -17,10 +17,10 @@ body{
 }
 
 a{
-    color: #262626;
+    color: #333333;
 }
 
-
+/* --------------------------------------TEMPLATE------------------------------------------ */
 nav{
     display: flex;
     flex-wrap: wrap;
@@ -36,7 +36,7 @@ nav{
     4.5px 4.5px 6.7px rgba(0, 0, 0, 0.012),
     8.4px 8.4px 12.5px rgba(0, 0, 0, 0.014),
     20px 20px 30px rgba(0, 0, 0, 0.02)
-  ;
+    ;
 }
 
 nav h1{
@@ -64,13 +64,13 @@ nav h1{
 }
 
 .searchbar .fa-magnifying-glass{
-background-color: white;
-vertical-align: middle;
-height:34px;
-width: 34px;
-padding: 12px 10px;
-font-size: .8rem;
-transform: translateY(-1px);
+    background-color: white;
+    vertical-align: middle;
+    height:34px;
+    width: 34px;
+    padding: 12px 10px;
+    font-size: .8rem;
+    transform: translateY(-1px);
 }
 
 .searchbar .fa-magnifying-glass:hover{
@@ -106,10 +106,7 @@ nav ul li{
     background-color:transparent;
     height: 30px;
     text-align: center;
-    /* border-radius: 5px; */
     padding: 5px 20px 5px 20px;
-
-    /* transition: .5s; */
     font-weight: 500;
     text-transform: uppercase;
 }
@@ -137,7 +134,6 @@ main{
     height: 100vw;
 }
 
-
 .contenu{
     width: 100%;
     padding: 20px;
@@ -145,46 +141,12 @@ main{
     flex-wrap: wrap;
 }
 
-#listFilm{
+.contenu p{
     width: 100%;
 }
 
 h2{
     width: 100%;
-}
-
-.contenu p{
-    width: 100%;
-}
-
-.table{
-    width: 80%;
-    border-spacing: 0px 5px;
-}
-
-.table td{
-    height: 50px;
-    padding: 10px;
-    background-color: #ececec;
-}
-
-.table td:nth-child(1){
-    border-radius: 5px 0 0 5px;
-}
-
-.table td:nth-child(2){
-    border-radius: 0 5px 5px 0;
-}
-
-.table th:nth-child(1){
-    border-radius: 10px 0 0 0;
-}
-.table th:nth-child(2){
-    border-radius:  0 10px 0 0;
-}
-
-.table td:nth-child(2){
-    text-align: center;
 }
 
 .table a{
@@ -199,9 +161,193 @@ h2{
     background-color: #fecc00;
 }
 
+.table td:nth-child(1){
+    border-radius: 5px;
+}
+
+/* --------------------------------------LIST FILM------------------------------------------ */
+
+#listFilms{
+    width: 100%;
+}
+
+.table{
+    width: 100%;
+    border-spacing: 0px 5px;
+}
+
+.table td{
+    height: 50px;
+    padding: 10px;
+    background-color: #ececec;
+}
+
+#listFilms .table td:nth-child(1){
+    border-radius: 5px 0 0 5px;
+}
+
+#listFilms .table td:nth-child(2){
+    border-radius: 0 5px 5px 0;
+}
+
+.table th:nth-child(1){
+    border-radius: 10px 0 0 0;
+}
+.table th:nth-child(2){
+    border-radius:  0 10px 0 0;
+}
+
+.table td:nth-child(2){
+    text-align: center;
+}
+
+
 h3{
     width: 100%;
 }
+
+
+/* --------------------------------------LIST RESLISATEURS------------------------------------------ */
+
+#listRealisateurs{
+    width: 100%;
+}
+
+/* --------------------------------------LIST ACTEURS------------------------------------------ */
+
+#listActeurs{
+    width: 100%;
+}
+
+/* --------------------------------------LIST GENRES------------------------------------------ */
+
+#listGenres{
+    width: 100%;
+}
+
+/* --------------------------------------LIST ROLES------------------------------------------ */
+
+#listRoles{
+    width: 100%;
+}
+
+
+/* --------------------------------------DETAIL FILM------------------------------------------ */
+
+#detailFilm{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#detailFilm .card{
+    width: 50%;
+    padding-right: 10px;
+}
+
+#detailFilm .affiche{
+    margin-top: 20px;
+    display: flex;
+    width: 100%;
+}
+
+#detailFilm img{
+    width: 100%;
+    /* height: 400px; */
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+#detailFilm .titre{
+    width: 100%;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 600;
+    color: #333333;
+}
+
+#detailFilm .infos{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 5px;
+    padding: 10px;
+    border-radius: 0 0 10px 10px;
+    background-image: linear-gradient(
+        20deg,
+        hsl(0deg 0% 23%) 0%,
+        hsl(344deg 0% 25%) 13%,
+        hsl(344deg 0% 28%) 25%,
+        hsl(344deg 0% 31%) 37%,
+        hsl(344deg 0% 34%) 50%,
+        hsl(344deg 0% 37%) 63%,
+        hsl(344deg 0% 40%) 75%,
+        hsl(344deg 0% 43%) 87%,
+        hsl(0deg 0% 46%) 100%);
+    color: #f2f2f2;
+}
+
+#detailFilm .infos .casting{
+    width: 90%;
+}
+
+#detailFilm .infos .casting p:nth-child(1){
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+#detailFilm .synopsis{
+    width: 50%;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ececec;
+    text-align: justify;
+    height: fit-content;
+
+}
+
+#detailFilm .btnLike{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 6px;   
+    width: 40px;
+    height: 40px;
+    background-color: #eebe00;
+    border-radius: 10px;
+    transition: .2s;
+}
+
+#detailFilm .btnLike:hover{
+    background-color: #262626;
+    cursor: pointer;
+}
+
+#detailFilm .btnLike:hover .fa-thumbs-up{
+    color: #eebe00;
+}
+
+#detailFilm .btnLike .fa-thumbs-up{
+    font-size: 1.3rem;
+    color: #474747;
+    transition: .2s;
+}
+
+
+
+
+
+/* -------------------------------------------------------------------------------- */
+/* --------------------------------------ADMIN------------------------------------------ */
 
 .adminForm{
     justify-content: start;
@@ -218,7 +364,7 @@ h3{
     4.5px 4.5px 6.7px rgba(0, 0, 0, 0.012),
     8.4px 8.4px 12.5px rgba(0, 0, 0, 0.014),
     20px 20px 30px rgba(0, 0, 0, 0.02)
-  ;
+    ;
 }
 
 .doubleForm{
@@ -232,56 +378,55 @@ h3{
     width: 482px;
 }
    .synopsis{
-    width: 100%;
-    height: 150px;
+        width: 100%;
+        height: 150px;
    }
 
    .synopsis textarea{
-    width: 100%;
-    height: 100%;
+        width: 100%;
+        height: 100%;
    }
 
    .row{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
    }
 
-   .adminForm:nth-child(1) .row{
-    margin-top: 20px;
+   .adminForm .row{
+        margin-top: 20px;
    }
 
-   .adminForm:nth-child(1) .row:nth-child(3){
-    margin-top: 50px;
+   .singleForm .adminForm:nth-child(1) .row:nth-child(3){
+        margin-top: 50px;
    }
 
    .btnAjouter{
-    display: flex;
-    justify-content: center;
+        display: flex;
+        justify-content: center;
    }
 
    .btnAjouter input{
-    width: 200px;
-    height: 30px;
-    background-color: #fecc00;
-    border-radius: 5px;
-    border: none;
-    box-shadow:
-    0.6px 0.6px 0.8px rgba(0, 0, 0, 0.006),
-    1.3px 1.3px 2px rgba(0, 0, 0, 0.008),
-    2.5px 2.5px 3.8px rgba(0, 0, 0, 0.01),
-    4.5px 4.5px 6.7px rgba(0, 0, 0, 0.012),
-    8.4px 8.4px 12.5px rgba(0, 0, 0, 0.014),
-    20px 20px 30px rgba(0, 0, 0, 0.02)
-  ;
+        width: 200px;
+        height: 30px;
+        margin-top: 20px;
+        background-color: #fecc00;
+        border-radius: 5px;
+        border: none;
+        box-shadow:
+        0.6px 0.6px 0.8px rgba(0, 0, 0, 0.006),
+        1.3px 1.3px 2px rgba(0, 0, 0, 0.008),
+        2.5px 2.5px 3.8px rgba(0, 0, 0, 0.01),
+        4.5px 4.5px 6.7px rgba(0, 0, 0, 0.012),
+        8.4px 8.4px 12.5px rgba(0, 0, 0, 0.014),
+        20px 20px 30px rgba(0, 0, 0, 0.02);
    }
-
-   .adminForm .btnAjouter input{
-    position: absolute;
+    .doubleForm:nth-child(3) .adminForm:nth-child(1) .btnAjouter input{
+        margin-top: 148px;
    }
 
    .btnAjouter input:hover{
-    background-color: #eebe00;
-    cursor: pointer;
+        background-color: #eebe00;
+        cursor: pointer;
    }
 
