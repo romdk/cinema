@@ -165,12 +165,6 @@ h2{
     border-radius: 5px;
 }
 
-/* --------------------------------------LIST FILM------------------------------------------ */
-
-#listFilms{
-    width: 100%;
-}
-
 .table{
     width: 100%;
     border-spacing: 0px 5px;
@@ -180,14 +174,6 @@ h2{
     height: 50px;
     padding: 10px;
     background-color: #ececec;
-}
-
-#listFilms .table td:nth-child(1){
-    border-radius: 5px 0 0 5px;
-}
-
-#listFilms .table td:nth-child(2){
-    border-radius: 0 5px 5px 0;
 }
 
 .table th:nth-child(1){
@@ -200,6 +186,105 @@ h2{
 .table td:nth-child(2){
     text-align: center;
 }
+/* --------------------------------------LIST FILM------------------------------------------ */
+
+#listFilms{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+#listFilms .card{
+    position: relative;
+    display:inline-flex;
+    flex-wrap: wrap;
+    height: 25rem;
+    width: 20rem;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background-color: black;
+    box-shadow:
+    0.6px 0.6px 0.8px rgba(0, 0, 0, 0.006),
+    1.3px 1.3px 2px rgba(0, 0, 0, 0.008),
+    2.5px 2.5px 3.8px rgba(0, 0, 0, 0.01),
+    4.5px 4.5px 6.7px rgba(0, 0, 0, 0.012),
+    8.4px 8.4px 12.5px rgba(0, 0, 0, 0.014),
+    20px 20px 30px rgba(0, 0, 0, 0.02);
+}
+
+#listFilms .card .affiche{
+    position: relative;
+    width: 100%;
+    height: 85%;
+    overflow: hidden;
+}
+
+#listFilms .card img{
+    position: absolute;
+    width: 100%;
+}
+
+#listFilms .card .infos{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: white;
+    background-image: linear-gradient(
+        20deg,
+        hsl(0deg 0% 23%) 0%,
+        hsl(344deg 0% 25%) 13%,
+        hsl(344deg 0% 28%) 25%,
+        hsl(344deg 0% 31%) 37%,
+        hsl(344deg 0% 34%) 50%,
+        hsl(344deg 0% 37%) 63%,
+        hsl(344deg 0% 40%) 75%,
+        hsl(344deg 0% 43%) 87%,
+        hsl(0deg 0% 46%) 100%);
+}
+
+#listFilms .card .infos p{
+    width: 100%;
+    text-align: center;
+}
+
+#listFilms .card .infos p:nth-child(1){
+font-size: 1.5rem;
+font-weight: 600;
+text-transform: uppercase;
+}
+
+#listFilms .card .overlay{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    transition: .2s;
+    
+}
+
+#listFilms .card .overlay i{
+    color:#fecb0000;
+    font-size: 1.5rem;
+    transition: .2s;
+}
+
+#listFilms .card:hover .overlay{
+    background-color: #262626ab;
+    backdrop-filter: blur(5px);
+}
+
+#listFilms .card:hover i{
+    color: #fecc00;
+}
+
+
 
 
 h3{
@@ -211,12 +296,202 @@ h3{
 
 #listRealisateurs{
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+#listRealisateurs .card{
+    position: relative;
+    display:inline-flex;
+    flex-wrap: wrap;
+    height: 20rem;
+    width: 14rem;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background-color: black;
+    box-shadow:
+    0.6px 0.6px 0.8px rgba(0, 0, 0, 0.006),
+    1.3px 1.3px 2px rgba(0, 0, 0, 0.008),
+    2.5px 2.5px 3.8px rgba(0, 0, 0, 0.01),
+    4.5px 4.5px 6.7px rgba(0, 0, 0, 0.012),
+    8.4px 8.4px 12.5px rgba(0, 0, 0, 0.014),
+    20px 20px 30px rgba(0, 0, 0, 0.02);
+}
+
+#listRealisateurs .card .affiche{
+    position: relative;
+    width: 100%;
+    height: 85%;
+    overflow: hidden;
+}
+
+#listRealisateurs .card img{
+    position: absolute;
+    width: 100%;
+}
+
+#listRealisateurs .card .infos{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: white;
+    background-image: linear-gradient(
+        20deg,
+        hsl(0deg 0% 23%) 0%,
+        hsl(344deg 0% 25%) 13%,
+        hsl(344deg 0% 28%) 25%,
+        hsl(344deg 0% 31%) 37%,
+        hsl(344deg 0% 34%) 50%,
+        hsl(344deg 0% 37%) 63%,
+        hsl(344deg 0% 40%) 75%,
+        hsl(344deg 0% 43%) 87%,
+        hsl(0deg 0% 46%) 100%);
+}
+
+#listRealisateurs .card .infos p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+
+#listRealisateurs .card .infos p:nth-child(1){
+font-size: 1.5rem;
+font-weight: 600;
+text-transform: uppercase;
+}
+
+#listRealisateurs .card .overlay{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    transition: .2s;
+    
+}
+
+#listRealisateurs .card .overlay i{
+    color:#fecb0000;
+    font-size: 1.5rem;
+    transition: .2s;
+}
+
+#listRealisateurs .card:hover .overlay{
+    background-color: #262626ab;
+    backdrop-filter: blur(5px);
+}
+
+#listRealisateurs .card:hover i{
+    color: #fecc00;
 }
 
 /* --------------------------------------LIST ACTEURS------------------------------------------ */
 
 #listActeurs{
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+#listActeurs .card{
+    position: relative;
+    display:inline-flex;
+    flex-wrap: wrap;
+    height: 20rem;
+    width: 14rem;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background-color: black;
+    box-shadow:
+    0.6px 0.6px 0.8px rgba(0, 0, 0, 0.006),
+    1.3px 1.3px 2px rgba(0, 0, 0, 0.008),
+    2.5px 2.5px 3.8px rgba(0, 0, 0, 0.01),
+    4.5px 4.5px 6.7px rgba(0, 0, 0, 0.012),
+    8.4px 8.4px 12.5px rgba(0, 0, 0, 0.014),
+    20px 20px 30px rgba(0, 0, 0, 0.02);
+}
+
+#listActeurs .card .affiche{
+    position: relative;
+    width: 100%;
+    height: 85%;
+    overflow: hidden;
+}
+
+#listActeurs .card img{
+    position: absolute;
+    width: 100%;
+}
+
+#listActeurs .card .infos{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: white;
+    background-image: linear-gradient(
+        20deg,
+        hsl(0deg 0% 23%) 0%,
+        hsl(344deg 0% 25%) 13%,
+        hsl(344deg 0% 28%) 25%,
+        hsl(344deg 0% 31%) 37%,
+        hsl(344deg 0% 34%) 50%,
+        hsl(344deg 0% 37%) 63%,
+        hsl(344deg 0% 40%) 75%,
+        hsl(344deg 0% 43%) 87%,
+        hsl(0deg 0% 46%) 100%);
+}
+
+#listActeurs .card .infos p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+
+#listActeurs .card .infos p:nth-child(1){
+font-size: 1.5rem;
+font-weight: 600;
+text-transform: uppercase;
+}
+
+#listActeurs .card .overlay{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    transition: .2s;
+    
+}
+
+#listActeurs .card .overlay i{
+    color:#fecb0000;
+    font-size: 1.5rem;
+    transition: .2s;
+}
+
+#listActeurs .card:hover .overlay{
+    background-color: #262626ab;
+    backdrop-filter: blur(5px);
+}
+
+#listActeurs .card:hover i{
+    color: #fecc00;
 }
 
 /* --------------------------------------LIST GENRES------------------------------------------ */
