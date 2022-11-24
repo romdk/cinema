@@ -20,6 +20,7 @@ class CinemaController {
         FROM personne
         INNER JOIN realisateur
         ON personne.id_personne = realisateur.id_personne
+        ORDER BY prenom_personne ASC
         ');
         require 'view/listRealisateur.php';
     }
@@ -31,6 +32,7 @@ class CinemaController {
         FROM personne
         INNER JOIN acteur
         ON personne.id_personne = acteur.id_personne
+        ORDER BY prenom_personne ASC
         ');
         require 'view/listActeurs.php';
     }
@@ -40,6 +42,7 @@ class CinemaController {
         $requete = $pdo->query('
         SELECT nom_genre, id_genre
         FROM genre
+        ORDER BY nom_genre ASC
         ');
         require 'view/listGenres.php';
     }
@@ -49,6 +52,7 @@ class CinemaController {
         $requete = $pdo->query('
         SELECT nom_personnage,id_role
         FROM role
+        ORDER BY nom_personnage ASC
         ');
         require 'view/listRoles.php';
     }
