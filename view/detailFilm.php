@@ -24,7 +24,7 @@
                         <?php
                         foreach($requete2->fetchAll() as $acteur) { ?>
                     
-                            <p><?= $acteur['prenom_personne'].' '.$acteur['nom_personne'] ?></p>
+                            <p><a href="index.php?action=detailActeur&id=<?= $acteur['id_acteur'] ?>"><?= $acteur['prenom_personne'].' '.$acteur['nom_personne'] ?></a></p>
                         <?php } ?>
                         </div>
                         <a href="index.php?action=ajoutLike&id=<?=$id?>"><div class='btnLike'><i class="fa-regular fa-thumbs-up"></i><?= $informations['likes'] ?></div></a>  

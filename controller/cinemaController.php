@@ -71,7 +71,7 @@ class CinemaController {
         $requete->execute(['id' => $id]);
 
         $requete2 = $pdo->prepare('
-        SELECT nom_personne, prenom_personne
+        SELECT nom_personne, prenom_personne,acteur.id_acteur
         FROM personne
         INNER JOIN acteur
         ON personne.id_personne = acteur.id_personne
@@ -95,7 +95,7 @@ class CinemaController {
         $requete->execute(['id' => $id]);
 
         $requete2 = $pdo->prepare('
-        SELECT titre
+        SELECT titre, id_film
         FROM film
         INNER JOIN realisateur
         ON film.id_realisateur = realisateur.id_realisateur
@@ -118,7 +118,7 @@ class CinemaController {
         $requete->execute(['id' => $id]);
 
         $requete2 = $pdo->prepare('
-        SELECT titre
+        SELECT titre,film.id_film
         FROM film
         INNER JOIN figurer
         ON film.id_film = figurer.id_film
@@ -138,7 +138,7 @@ class CinemaController {
         ');
         $requete->execute(['id' => $id]);
         $requete2 = $pdo->prepare('
-        SELECT titre
+        SELECT titre, film.id_film
         FROM film
         INNER JOIN associer
         ON film.id_film = associer.id_film
@@ -158,7 +158,7 @@ class CinemaController {
         $requete->execute(['id' => $id]);
 
         $requete2 = $pdo->prepare('
-        SELECT DISTINCT nom_personne, prenom_personne
+        SELECT DISTINCT nom_personne, prenom_personne, acteur.id_acteur
         FROM personne
         INNER JOIN acteur
         ON personne.id_personne = acteur.id_personne
@@ -169,7 +169,7 @@ class CinemaController {
         $requete2->execute(['id' => $id]);
 
         $requete3 = $pdo->prepare('
-        SELECT titre
+        SELECT titre, film.id_film
         FROM film
         INNER JOIN figurer
         ON film.id_film = figurer.id_film
