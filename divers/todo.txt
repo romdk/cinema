@@ -1,4 +1,5 @@
 faire fonctionner searchbar
-faire des liens vers detail film acteurs etc
+afficher messages d'ajout
+mettre like en session
 
 
