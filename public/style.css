@@ -157,10 +157,6 @@ h2{
     padding: 10px;
 }
 
-.table a:hover{
-    background-color: #fecc00;
-}
-
 .table td:nth-child(1){
     border-radius: 5px;
 }
@@ -362,8 +358,8 @@ h3{
 }
 
 #listRealisateurs .card .infos p:nth-child(1){
-font-size: 1.5rem;
-font-weight: 600;
+font-size: 1.2rem;
+font-weight: 400;
 text-transform: uppercase;
 }
 
@@ -463,8 +459,8 @@ text-transform: uppercase;
 }
 
 #listActeurs .card .infos p:nth-child(1){
-font-size: 1.5rem;
-font-weight: 600;
+font-size: 1.2rem;
+font-weight: 400;
 text-transform: uppercase;
 }
 
@@ -498,12 +494,52 @@ text-transform: uppercase;
 
 #listGenres{
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#listGenres a{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 5px;
+    /* margin-top: 10px; */
+    background-color: #ececec;
+    transition: .2s;
+}
+
+#listGenres a:hover{
+    background-color: #eebe00;
 }
 
 /* --------------------------------------LIST ROLES------------------------------------------ */
 
 #listRoles{
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#listRoles a{
+    width: 14.9rem;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 5px;
+    /* margin-top: 10px; */
+    background-color: #ececec;
+    transition: .2s;
+}
+
+#listRoles a:hover{
+    background-color: #eebe00;
 }
 
 
