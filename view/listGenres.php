@@ -2,22 +2,10 @@
 
 <p> Il y a <?= $requete->rowCount() ?> genres</p>
 <div id='listGenres'>
-    <table class='table'>
-    <thead>
-            <tr>
-                <th>GENRE</th>
-            </tr>
-        </thead>
-        <tbody>
             <?php
                 foreach($requete->fetchAll() as $genre) { ?>
-                <tr>
-                    <td><a href="index.php?action=detailGenre&id=<?= $genre['id_genre'] ?>"><?= $genre['nom_genre'] ?></a></td>
-                    
-                </tr>
+                <a href="index.php?action=detailGenre&id=<?= $genre['id_genre'] ?>"><?= $genre['nom_genre'] ?></a>
             <?php } ?>
-        </tbody>
-    </table>
 </div>
 
 <?php

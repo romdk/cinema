@@ -2,21 +2,10 @@
 
 <p> Il y a <?= $requete->rowCount() ?> rôles</p>
 <div id="listRoles">
-    <table class='table'>
-    <thead>
-            <tr>
-                <th>NOM DU PERSONNAGE</th>
-            </tr>
-        </thead>
-        <tbody>
             <?php
                 foreach($requete->fetchAll() as $role) { ?>
-                <tr>
-                    <td><a href="index.php?action=detailRole&id=<?= $role['id_role'] ?>"><?= $role['nom_personnage'] ?></a></td>                
-                </tr>
+                    <a href="index.php?action=detailRole&id=<?= $role['id_role'] ?>"><?= $role['nom_personnage'] ?></a>                  
             <?php } ?>
-        </tbody>
-    </table>
 </div>
 
 
