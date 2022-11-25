@@ -22,18 +22,7 @@
             <input type="text" id="searchBar" onkeyup="affSuggestions()"  placeholder="Rechercher un film, un réalisateur, un acteur..."><i class="fa-solid fa-magnifying-glass"></i>
             <!-- onblur="masqSuggestions()" -->
         <ul id='suggestions'>
-        <?php 
-            foreach($suggestionFilm->fetchAll() as $film) { ?>
-                <li class='suggestion'>
-                    <a href="index.php?action=detailFilm&id=<?= $film['id_film'] ?>">
-                        <div class='miniature'><img src="<?= $film['affiche'] ?>" alt=""></div>
-                        <p><?= $film['titre'] ?></p>
-                        <p>Film de <?= $film['prenom_personne'].' '.$film['nom_personne'] ?></p>
-                        <p>(<?= $film['annee_sortie'] ?>)</p>
-                    </a>
-                </li>
-            <?php } ?>
-        <?php 
+            <?php 
             foreach($suggestionRealisateur->fetchAll() as $realisateur) { ?>
                 <li class='suggestion'>
                     <a href="index.php?action=detailRealisateur&id=<?= $realisateur['id_realisateur'] ?>">
@@ -52,7 +41,18 @@
                         <p>Acteur</p>
                     </a>
                 </li>
-            <?php } ?>
+                <?php } ?>
+                <?php 
+                    foreach($suggestionFilm->fetchAll() as $film) { ?>
+                        <li class='suggestion'>
+                            <a href="index.php?action=detailFilm&id=<?= $film['id_film'] ?>">
+                                <div class='miniature'><img src="<?= $film['affiche'] ?>" alt=""></div>
+                                <p><?= $film['titre'] ?></p>
+                                <p>Film de <?= $film['prenom_personne'].' '.$film['nom_personne'] ?></p>
+                                <p>(<?= $film['annee_sortie'] ?>)</p>
+                            </a>
+                        </li>
+                    <?php } ?>
             
         </ul>
 
