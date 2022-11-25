@@ -1,7 +1,6 @@
 <?php 
     ob_start();
     session_start();
-
 ?>
     <div id='admin'>
         <div><?php if(isset($_SESSION['message'])){ echo $_SESSION['message'];}?></div>

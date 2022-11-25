@@ -87,22 +87,66 @@ nav h1{
     left: 0px;
     width: 396px;
     height: fit-content;
-    padding: 10px;
+    max-height: 485px;
+    overflow: hidden;
     background-color: rgba(255, 255, 255, 0.808);
     backdrop-filter: blur(5px);
 }
 
 .searchbar #suggestions li{
+    position: relative;
     width: 100%;
-    margin-top: 5px;
     text-align: start;
     display: none;
+    flex-wrap: wrap;
+    border-bottom: solid 1px #808080;
 }
 
 .searchbar #suggestions li a{
     display: flex;
     padding: 5px;
     width: 100%;
+}
+
+.searchbar #suggestions li a .miniature{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 50px;
+    overflow: hidden;
+}
+
+.searchbar #suggestions li a img{
+    height: 80px;
+}
+
+.searchbar #suggestions li a p:nth-child(2){
+    position: absolute;
+    top: 2px;
+    left: 70px;
+    width: 100%;
+    color: #000000;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.searchbar #suggestions li a p:nth-child(3){
+    position: absolute;
+    top: 22px;
+    left: 70px;
+    width: 100%;
+    font-size: .8rem;
+    color: #474747;
+}
+
+.searchbar #suggestions li a p:nth-child(4){
+    position: absolute;
+    top: 37px;
+    left: 70px;
+    width: 100%;
+    font-size: .8rem;
+    color: #474747;
 }
 
 .searchbar #suggestions a:hover{

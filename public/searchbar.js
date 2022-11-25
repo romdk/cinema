@@ -13,14 +13,27 @@ function affSuggestions() {
             let txtValue = a.textContent || a.innerText;
             if (txtValue.toUpperCase().indexOf(filter) > -1) {
                 li[i].style.display = "block";
-            } else {
+            }else {
                 li[i].style.display = "none";
             }
+        }
+        if(input.value == ""){
+            ul.style.display = 'none';
         }
     }
 }
 
+
+function sleep(milliseconds) {
+    const date = Date.now();
+    let currentDate = null;
+    do {
+        currentDate = Date.now();
+    } while (currentDate - date < milliseconds);
+}
+
 function masqSuggestions(){
+    sleep(1000);
     let ul = document.getElementById('suggestions');
     ul.style.display = 'none';
 }
