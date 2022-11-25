@@ -514,7 +514,7 @@ text-transform: uppercase;
 }
 
 #listGenres a:hover{
-    background-color: #eebe00;
+    background-color: #fecc00;
 }
 
 /* --------------------------------------LIST ROLES------------------------------------------ */
@@ -540,7 +540,7 @@ text-transform: uppercase;
 }
 
 #listRoles a:hover{
-    background-color: #eebe00;
+    background-color: #fecc00;
 }
 
 
@@ -631,6 +631,14 @@ text-transform: uppercase;
     margin-left: 5px;
 }
 
+#detailFilm .infos a{
+    color: #fecc00;
+}
+
+#detailFilm .infos a:hover{
+    color: #eebe00;
+}
+
 #detailFilm .casting a{
     color: #fff;
 }
@@ -664,6 +672,7 @@ text-transform: uppercase;
     background-color: #eebe00;
     border-radius: 10px;
     transition: .2s;
+    color: #474747;
 }
 
 #detailFilm .btnLike:hover{

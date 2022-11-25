@@ -10,7 +10,7 @@
                     <div class='affiche'><img src="<?= $informations['affiche'] ?>" alt="affiche du film <?= $informations['titre'] ?>"></div>
                     <div class='infos'>
                         <p><?= $informations['annee_sortie'].' / '.$informations['duree'].' minutes / '.$informations['nom_genre'] ?></p>
-                        <p>Réalisé par <?= $informations['prenom_personne'].' '.$informations['nom_personne'] ?></p>
+                        <p>Réalisé par <a href="index.php?action=detailRealisateur&id=<?= $informations['id_realisateur'] ?>"><?= $informations['prenom_personne'].' '.$informations['nom_personne'] ?></a></p>
                         <div class="etoiles">
                             <span id='etoile1' class="fa fa-star "></span>
                             <span id='etoile2' class="fa fa-star "></span>
