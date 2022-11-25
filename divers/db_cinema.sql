@@ -26,14 +26,21 @@ CREATE TABLE IF NOT EXISTS `acteur` (
   CONSTRAINT `FK_acteur_personne` FOREIGN KEY (`id_personne`) REFERENCES `personne` (`id_personne`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table cinema_roman.acteur : ~6 rows (environ)
+-- Listage des données de la table cinema_roman.acteur : ~5 rows (environ)
 /*!40000 ALTER TABLE `acteur` DISABLE KEYS */;
 INSERT INTO `acteur` (`id_acteur`, `id_personne`) VALUES
 	(1, 3),
 	(2, 4),
 	(3, 5),
 	(4, 7),
-	(5, 8);
+	(5, 8),
+	(8, 12),
+	(9, 13),
+	(10, 14),
+	(11, 15),
+	(12, 16),
+	(13, 17),
+	(14, 18);
 /*!40000 ALTER TABLE `acteur` ENABLE KEYS */;
 
 -- Listage de la structure de la table cinema_roman. associer
@@ -46,7 +53,7 @@ CREATE TABLE IF NOT EXISTS `associer` (
   CONSTRAINT `FK_associer_genre` FOREIGN KEY (`id_genre`) REFERENCES `genre` (`id_genre`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Listage des données de la table cinema_roman.associer : ~8 rows (environ)
+-- Listage des données de la table cinema_roman.associer : ~13 rows (environ)
 /*!40000 ALTER TABLE `associer` DISABLE KEYS */;
 INSERT INTO `associer` (`id_film`, `id_genre`) VALUES
 	(1, 1),
@@ -92,7 +99,21 @@ INSERT INTO `figurer` (`id_film`, `id_acteur`, `id_role`) VALUES
 	(1, 2, 2),
 	(1, 5, 5),
 	(7, 2, 2),
-	(7, 5, 5);
+	(7, 5, 5),
+	(5, 8, 7),
+	(11, 1, 3),
+	(8, 9, 8),
+	(8, 10, 9),
+	(9, 10, 9),
+	(10, 10, 9),
+	(8, 12, 10),
+	(9, 12, 10),
+	(10, 12, 10),
+	(8, 11, 11),
+	(9, 11, 11),
+	(10, 11, 11),
+	(13, 13, 12),
+	(11, 14, 13);
 /*!40000 ALTER TABLE `figurer` ENABLE KEYS */;
 
 -- Listage de la structure de la table cinema_roman. film
@@ -111,7 +132,7 @@ CREATE TABLE IF NOT EXISTS `film` (
   CONSTRAINT `FK_film_realisateur` FOREIGN KEY (`id_realisateur`) REFERENCES `realisateur` (`id_realisateur`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table cinema_roman.film : ~7 rows (environ)
+-- Listage des données de la table cinema_roman.film : ~13 rows (environ)
 /*!40000 ALTER TABLE `film` DISABLE KEYS */;
 INSERT INTO `film` (`id_film`, `id_realisateur`, `titre`, `annee_sortie`, `duree`, `synopsis`, `note`, `affiche`, `likes`) VALUES
 	(1, 0, 'Star Wars IV', '1977', 121, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', 5, 'https://dnsmptv-img.pragma-consult.be/imgs/disney/big/jan22-starwarsepisodeiv-thumbnail-fr-1643017228-fr.jpg', 2160),
@@ -155,7 +176,7 @@ CREATE TABLE IF NOT EXISTS `personne` (
   PRIMARY KEY (`id_personne`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table cinema_roman.personne : ~9 rows (environ)
+-- Listage des données de la table cinema_roman.personne : ~11 rows (environ)
 /*!40000 ALTER TABLE `personne` DISABLE KEYS */;
 INSERT INTO `personne` (`id_personne`, `nom_personne`, `prenom_personne`, `sexe`, `date_naissance`, `photo`) VALUES
 	(0, 'Lucas', 'George', 'H', '1944-05-14', 'https://upload.wikimedia.org/wikipedia/commons/a/a0/George_Lucas_cropped_2009.jpg'),
@@ -168,7 +189,14 @@ INSERT INTO `personne` (`id_personne`, `nom_personne`, `prenom_personne`, `sexe`
 	(7, 'Eastwood', 'Clint', 'H', '1930-05-31', 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Clint_Eastwood_at_2010_New_York_Film_Festival.jpg/640px-Clint_Eastwood_at_2010_New_York_Film_Festival.jpg'),
 	(8, 'Fisher', 'Carrie', 'F', '1956-08-21', 'https://upload.wikimedia.org/wikipedia/commons/d/d1/Carrie_Fisher_2013.jpg'),
 	(9, 'Villeneuve', 'Denis', 'H', '1967-08-03', 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Denis_Villeneuve_by_Gage_Skidmore.jpg/220px-Denis_Villeneuve_by_Gage_Skidmore.jpg'),
-	(10, 'Campbell', 'Martin ', 'H', '1943-08-24', 'http://t1.gstatic.com/licensed-image?q=tbn:ANd9GcQPKIlTF1RlXYXQ7ybfvefdfWgs5roda2Yg-PNSrIFVjel2YQhMBp3DSSKWR66f2rW5');
+	(10, 'Campbell', 'Martin ', 'H', '1943-08-24', 'http://t1.gstatic.com/licensed-image?q=tbn:ANd9GcQPKIlTF1RlXYXQ7ybfvefdfWgs5roda2Yg-PNSrIFVjel2YQhMBp3DSSKWR66f2rW5'),
+	(12, 'Clarke', 'Emilia ', 'F', '1986-08-23', 'https://fr.web.img5.acsta.net/c_310_420/pictures/15/06/04/16/19/049773.jpg'),
+	(13, 'Neeson', 'Liam', 'H', '1952-06-07', 'https://upload.wikimedia.org/wikipedia/commons/b/b9/Liam_Neeson_Deauville_2012.jpg'),
+	(14, 'McGregor', 'Ewan ', 'H', '1971-03-31', 'https://fr.web.img5.acsta.net/pictures/18/01/08/13/51/4841442.jpg'),
+	(15, 'Portman', 'Natalie ', 'F', '1981-06-09', 'http://t2.gstatic.com/licensed-image?q=tbn:ANd9GcQ05APJfloQAn5iJYx59K82xChZqcfprvhWRGCyaDhVwpchFwaIQXYavyo2mnUTGJGH'),
+	(16, 'Christensen', 'Hayden ', 'H', '1981-04-19', 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Hayden-cfda2010-0004%281%29_%28cropped%29.jpg/220px-Hayden-cfda2010-0004%281%29_%28cropped%29.jpg'),
+	(17, 'Brosnan', 'Pierce ', 'H', '1953-05-16', 'https://upload.wikimedia.org/wikipedia/commons/d/d7/Pierce_Brosnan_2017.jpg'),
+	(18, 'Gosling', 'Ryan', 'H', '1980-11-12', 'http://t3.gstatic.com/licensed-image?q=tbn:ANd9GcQuW7VQCvyYXQZEG2aCYyTLeNmNjDyyw9K-IjoqNG2GXITFvNSQiBdBVhFjPdlf71sO');
 /*!40000 ALTER TABLE `personne` ENABLE KEYS */;
 
 -- Listage de la structure de la table cinema_roman. realisateur
@@ -180,7 +208,7 @@ CREATE TABLE IF NOT EXISTS `realisateur` (
   CONSTRAINT `FK_realisateur_personne` FOREIGN KEY (`id_personne`) REFERENCES `personne` (`id_personne`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table cinema_roman.realisateur : ~5 rows (environ)
+-- Listage des données de la table cinema_roman.realisateur : ~7 rows (environ)
 /*!40000 ALTER TABLE `realisateur` DISABLE KEYS */;
 INSERT INTO `realisateur` (`id_realisateur`, `id_personne`) VALUES
 	(0, 0),
@@ -207,7 +235,14 @@ INSERT INTO `role` (`id_role`, `nom_personnage`) VALUES
 	(2, 'Luke Skywalker'),
 	(3, 'Rick Deckard'),
 	(4, 'Miko'),
-	(5, 'Leia Organa');
+	(5, 'Leia Organa'),
+	(7, 'Qi\'ra'),
+	(8, 'Qui-Gon Jinn'),
+	(9, 'Obi-Wan Kenobi'),
+	(10, 'Anakin Skywalker'),
+	(11, 'Padmé Amidala\r\n'),
+	(12, 'james bond'),
+	(13, 'Officier K');
 /*!40000 ALTER TABLE `role` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
