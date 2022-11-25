@@ -15,12 +15,12 @@
     <link rel="stylesheet" href="public/style.css">
     <title><?= $titre ?></title>
 </head>
-<!-- onblur="masqSuggestions()" -->
 <body>
     <nav>
-    <h1><i class="fa-solid fa-ticket-simple"></i><i class="fa-solid fa-film"></i>PDO Cinéma</h1>
-    <div class='searchbar' >
-        <input type="text" id="searchBar" onkeyup="affSuggestions()"  placeholder="Rechercher un film, un réalisateur, un acteur..."><i class="fa-solid fa-magnifying-glass"></i>
+        <h1><i class="fa-solid fa-ticket-simple"></i><i class="fa-solid fa-film"></i>PDO Cinéma</h1>
+        <div class='searchbar' >
+            <input type="text" id="searchBar" onkeyup="affSuggestions()"  placeholder="Rechercher un film, un réalisateur, un acteur..."><i class="fa-solid fa-magnifying-glass"></i>
+            <!-- onblur="masqSuggestions()" -->
         <ul id='suggestions'>
         <?php 
             foreach($suggestionFilm->fetchAll() as $film) { ?>

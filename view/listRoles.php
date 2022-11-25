@@ -1,6 +1,6 @@
 <?php ob_start() ?>
 
-<p> Il y a <?= $requete->rowCount() ?> rôles</p>
+<p><?= $requete->rowCount() ?> rôles</p>
 <div id="listRoles">
             <?php
                 foreach($requete->fetchAll() as $role) { ?>

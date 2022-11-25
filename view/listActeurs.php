@@ -1,6 +1,6 @@
 <?php ob_start() ?>
 
-<p> Il y a <?= $requete->rowCount() ?> acteurs</p>
+<p><?= $requete->rowCount() ?> acteurs</p>
 <div id="listActeurs">
 <?php
         foreach($requete->fetchAll() as $acteur) { ?>

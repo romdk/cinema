@@ -150,7 +150,7 @@ nav h1{
 }
 
 .searchbar #suggestions a:hover{
-    background-color: #eebe00;
+    background-color: #eebe00a9;
 }
 
 .fa-ticket-simple{
@@ -270,11 +270,9 @@ h2{
     position: relative;
     display:inline-flex;
     flex-wrap: wrap;
-    height: 25rem;
-    width: 20rem;
+    height: 19rem;
+    width: 14rem;
     overflow: hidden;
-    border-radius: 10px;
-    margin-bottom: 10px;
     background-color: black;
     box-shadow:
     0.6px 0.6px 0.8px rgba(0, 0, 0, 0.006),
@@ -288,33 +286,38 @@ h2{
 #listFilms .card .affiche{
     position: relative;
     width: 100%;
-    height: 85%;
+    height: 100%;
     overflow: hidden;
 }
 
 #listFilms .card img{
     position: absolute;
     width: 100%;
+    height: 100%;
 }
 
 #listFilms .card .infos{
+    position: absolute;
+    bottom: 0px;
+    left: 0;
     width: 100%;
     height: 15%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     color: white;
+    backdrop-filter: blur(5px);
     background-image: linear-gradient(
         20deg,
-        hsl(0deg 0% 23%) 0%,
-        hsl(344deg 0% 25%) 13%,
-        hsl(344deg 0% 28%) 25%,
-        hsl(344deg 0% 31%) 37%,
-        hsl(344deg 0% 34%) 50%,
-        hsl(344deg 0% 37%) 63%,
-        hsl(344deg 0% 40%) 75%,
-        hsl(344deg 0% 43%) 87%,
-        hsl(0deg 0% 46%) 100%);
+        rgba(59, 59, 59, 0.3) 0%,
+        rgba(64, 64, 64, 0.3) 13%,
+        rgba(71, 71, 71, 0.3) 25%,
+        rgba(79, 79, 79, 0.3) 37%,
+        rgba(87, 87, 87, 0.3) 50%,
+        rgba(94, 94, 94, 0.3) 63%,
+        rgba(102, 102, 102, 0.3) 75%,
+        rgba(110, 110, 110, 0.3) 87%,
+        rgba(117, 117, 117, 0.3) 100%);
 }
 
 #listFilms .card .infos p{
@@ -323,8 +326,8 @@ h2{
 }
 
 #listFilms .card .infos p:nth-child(1){
-font-size: 1.5rem;
-font-weight: 600;
+font-size: 1    rem;
+font-weight: 500;
 text-transform: uppercase;
 }
 
@@ -346,7 +349,23 @@ text-transform: uppercase;
 }
 
 #listFilms .card:hover .overlay{
-    background-color: #262626ab;
+    background-image: linear-gradient(
+  45deg,
+  rgba(255, 255, 255, 0.5) 0%,
+  rgba(224, 224, 224, 0.5) 8%,
+  rgba(186, 186, 186, 0.514) 15%,
+  rgba(140, 140, 140, 0.507) 23%,
+  rgba(71, 71, 71, 0.507) 31%,
+  rgba(99, 99, 99, 0.5) 38%,
+  rgba(158, 158, 158, 0.507) 46%,
+  rgba(199, 199, 199, 0.5) 54%,
+  rgba(235, 235, 235, 0.507) 62%,
+  rgba(245, 245, 245, 0.493) 69%,
+  rgba(212, 212, 212, 0.5) 77%,
+  rgba(173, 173, 173, 0.5) 85%,
+  rgba(122, 122, 122, 0.5) 92%,
+  rgba(0, 0, 0, 0.5) 100%
+);
     backdrop-filter: blur(5px);
 }
 
@@ -362,7 +381,7 @@ h3{
 }
 
 
-/* --------------------------------------LIST RESLISATEURS------------------------------------------ */
+/* --------------------------------------LIST REASLISATEURS------------------------------------------ */
 
 #listRealisateurs{
     width: 100%;
@@ -376,11 +395,9 @@ h3{
     position: relative;
     display:inline-flex;
     flex-wrap: wrap;
-    height: 20rem;
+    height: 19rem;
     width: 14rem;
     overflow: hidden;
-    border-radius: 10px;
-    margin-bottom: 10px;
     background-color: black;
     box-shadow:
     0.6px 0.6px 0.8px rgba(0, 0, 0, 0.006),
@@ -394,7 +411,7 @@ h3{
 #listRealisateurs .card .affiche{
     position: relative;
     width: 100%;
-    height: 85%;
+    height: 100%;
     overflow: hidden;
 }
 
@@ -404,23 +421,27 @@ h3{
 }
 
 #listRealisateurs .card .infos{
+    position: absolute;
+    bottom: 0px;
+    left: 0;
     width: 100%;
     height: 15%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     color: white;
+    backdrop-filter: blur(5px);
     background-image: linear-gradient(
         20deg,
-        hsl(0deg 0% 23%) 0%,
-        hsl(344deg 0% 25%) 13%,
-        hsl(344deg 0% 28%) 25%,
-        hsl(344deg 0% 31%) 37%,
-        hsl(344deg 0% 34%) 50%,
-        hsl(344deg 0% 37%) 63%,
-        hsl(344deg 0% 40%) 75%,
-        hsl(344deg 0% 43%) 87%,
-        hsl(0deg 0% 46%) 100%);
+        rgba(59, 59, 59, 0.1) 0%,
+        rgba(64, 64, 64, 0.1) 13%,
+        rgba(71, 71, 71, 0.1) 25%,
+        rgba(79, 79, 79, 0.1) 37%,
+        rgba(87, 87, 87, 0.1) 50%,
+        rgba(94, 94, 94, 0.1) 63%,
+        rgba(102, 102, 102, 0.1) 75%,
+        rgba(110, 110, 110, 0.1) 87%,
+        rgba(117, 117, 117, 0.1) 100%);
 }
 
 #listRealisateurs .card .infos p{
@@ -477,11 +498,9 @@ text-transform: uppercase;
     position: relative;
     display:inline-flex;
     flex-wrap: wrap;
-    height: 20rem;
+    height: 19rem;
     width: 14rem;
     overflow: hidden;
-    border-radius: 10px;
-    margin-bottom: 10px;
     background-color: black;
     box-shadow:
     0.6px 0.6px 0.8px rgba(0, 0, 0, 0.006),
@@ -495,7 +514,7 @@ text-transform: uppercase;
 #listActeurs .card .affiche{
     position: relative;
     width: 100%;
-    height: 85%;
+    height: 100%;
     overflow: hidden;
 }
 
@@ -505,23 +524,27 @@ text-transform: uppercase;
 }
 
 #listActeurs .card .infos{
+    position: absolute;
+    bottom: 0px;
+    left: 0;
     width: 100%;
     height: 15%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     color: white;
+    backdrop-filter: blur(5px);
     background-image: linear-gradient(
         20deg,
-        hsl(0deg 0% 23%) 0%,
-        hsl(344deg 0% 25%) 13%,
-        hsl(344deg 0% 28%) 25%,
-        hsl(344deg 0% 31%) 37%,
-        hsl(344deg 0% 34%) 50%,
-        hsl(344deg 0% 37%) 63%,
-        hsl(344deg 0% 40%) 75%,
-        hsl(344deg 0% 43%) 87%,
-        hsl(0deg 0% 46%) 100%);
+        rgba(59, 59, 59, 0.3) 0%,
+        rgba(64, 64, 64, 0.3) 13%,
+        rgba(71, 71, 71, 0.3) 25%,
+        rgba(79, 79, 79, 0.3) 37%,
+        rgba(87, 87, 87, 0.3) 50%,
+        rgba(94, 94, 94, 0.3) 63%,
+        rgba(102, 102, 102, 0.3) 75%,
+        rgba(110, 110, 110, 0.3) 87%,
+        rgba(117, 117, 117, 0.3) 100%);
 }
 
 #listActeurs .card .infos p{

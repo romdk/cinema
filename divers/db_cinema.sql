@@ -1,8 +1,8 @@
 -- --------------------------------------------------------
--- Hôte :                        127.0.0.1
--- Version du serveur:           5.7.24 - MySQL Community Server (GPL)
+-- Hôte:                         127.0.0.1
+-- Version du serveur:           5.7.33 - MySQL Community Server (GPL)
 -- SE du serveur:                Win64
--- HeidiSQL Version:             10.2.0.5599
+-- HeidiSQL Version:             11.2.0.6213
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -10,6 +10,7 @@
 /*!50503 SET NAMES utf8mb4 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 
 -- Listage de la structure de la base pour cinema_roman
@@ -23,9 +24,9 @@ CREATE TABLE IF NOT EXISTS `acteur` (
   PRIMARY KEY (`id_acteur`),
   KEY `id_personne` (`id_personne`),
   CONSTRAINT `FK_acteur_personne` FOREIGN KEY (`id_personne`) REFERENCES `personne` (`id_personne`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table cinema_roman.acteur : ~5 rows (environ)
+-- Listage des données de la table cinema_roman.acteur : ~6 rows (environ)
 /*!40000 ALTER TABLE `acteur` DISABLE KEYS */;
 INSERT INTO `acteur` (`id_acteur`, `id_personne`) VALUES
 	(1, 3),
@@ -45,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `associer` (
   CONSTRAINT `FK_associer_genre` FOREIGN KEY (`id_genre`) REFERENCES `genre` (`id_genre`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Listage des données de la table cinema_roman.associer : ~7 rows (environ)
+-- Listage des données de la table cinema_roman.associer : ~8 rows (environ)
 /*!40000 ALTER TABLE `associer` DISABLE KEYS */;
 INSERT INTO `associer` (`id_film`, `id_genre`) VALUES
 	(1, 1),
@@ -54,7 +55,13 @@ INSERT INTO `associer` (`id_film`, `id_genre`) VALUES
 	(4, 2),
 	(5, 2),
 	(7, 1),
-	(7, 2);
+	(7, 2),
+	(6, 3),
+	(8, 1),
+	(9, 1),
+	(10, 1),
+	(11, 1),
+	(13, 2);
 /*!40000 ALTER TABLE `associer` ENABLE KEYS */;
 
 -- Listage de la structure de la table cinema_roman. figurer
@@ -102,18 +109,24 @@ CREATE TABLE IF NOT EXISTS `film` (
   PRIMARY KEY (`id_film`),
   KEY `id_realisateur` (`id_realisateur`),
   CONSTRAINT `FK_film_realisateur` FOREIGN KEY (`id_realisateur`) REFERENCES `realisateur` (`id_realisateur`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 -- Listage des données de la table cinema_roman.film : ~7 rows (environ)
 /*!40000 ALTER TABLE `film` DISABLE KEYS */;
 INSERT INTO `film` (`id_film`, `id_realisateur`, `titre`, `annee_sortie`, `duree`, `synopsis`, `note`, `affiche`, `likes`) VALUES
-	(1, 0, 'Star Wars IV', '1977', 121, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', 5, 'https://static.fnac-static.com/multimedia/FR/Images_Produits/FR/fnac.com/Visual_Principal_340/7/2/0/5099709295027/tsp20121012190330/Star-Wars-Episode-4-Un-nouvel-espoir.jpg', 2145),
-	(2, 1, 'Blade Runner', '1982', 111, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', 4.5, 'https://m.media-amazon.com/images/I/61dVSMH76yL._AC_SY606_.jpg', 921),
-	(3, 0, 'Star Wars V', '1980', 144, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', 3.5, 'https://fr.web.img4.acsta.net/medias/nmedia/00/02/44/28/empire.jpg', 120),
-	(4, 3, 'Indiana Jones', '1981', 148, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', 2, 'https://i.ebayimg.com/images/g/s-sAAOSw9N1VpnwR/s-l500.jpg', 44),
-	(5, 2, 'Solo: A Star Wars Story', '2018', 136, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', 1, 'https://static.fnac-static.com/multimedia/Images/86/86/0F/CB/13307782-1505-1505-1/tsp20191112145401/Solo-A-Star-Wars-Story-AFFICHE-CINEMA-ORIGINALE.jpg#8d009cef-78ab-481d-8e8b-1e6056a78a36', 12),
+	(1, 0, 'Star Wars IV', '1977', 121, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', 5, 'https://dnsmptv-img.pragma-consult.be/imgs/disney/big/jan22-starwarsepisodeiv-thumbnail-fr-1643017228-fr.jpg', 2160),
+	(2, 1, 'Blade Runner', '1982', 111, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', 4.5, 'https://fr.web.img2.acsta.net/c_310_420/pictures/15/09/23/11/37/330370.jpg', 921),
+	(3, 0, 'Star Wars V', '1980', 144, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', 3.5, 'https://m.media-amazon.com/images/I/71CNDHGNE1L.jpg', 121),
+	(4, 3, 'Indiana Jones', '1981', 148, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', 2, 'https://fr.web.img2.acsta.net/c_310_420/medias/nmedia/00/02/49/18/affiche.jpg', 44),
+	(5, 2, 'Solo: A Star Wars Story', '2018', 136, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', 1, 'https://fr.web.img3.acsta.net/c_310_420/pictures/18/04/09/10/56/4971105.jpg', 12),
 	(6, 4, 'Cry Macho', '2021', 104, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', 0, 'https://fr.web.img6.acsta.net/c_310_420/pictures/21/08/06/12/10/2559362.jpg', 0),
-	(7, 0, 'Star Wars VI', '1983', 134, 'Luke Skywalker attempts to bring his father back to the light side of the Force. At the same time, the rebels hatch a plan to destroy the second Death Star.', 4.5, 'https://www.bdfugue.com/media/catalog/product/cache/1/image/400x/17f82f742ffe127f42dca9de82fb58b1/9/7/9782847896466_1_75_1.jpg', 1);
+	(7, 0, 'Star Wars VI', '1983', 134, 'Luke Skywalker attempts to bring his father back to the light side of the Force. At the same time, the rebels hatch a plan to destroy the second Death Star.', 4.5, 'https://fr.web.img6.acsta.net/c_310_420/medias/nmedia/18/35/41/62/18422602.jpg', 1),
+	(8, 0, 'Star Wars I', '1999', 136, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', 3, 'https://www.cinemaffiche.fr/4016-tm_large_default/star-wars-episode-1-star-wars-episode-1.jpg', 0),
+	(9, 0, 'Star Wars II', '2002', 144, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', 3.5, 'https://m.media-amazon.com/images/I/715aZ-gZP1L._AC_SY606_.jpg', 0),
+	(10, 0, 'Star Wars III', '2005', 140, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', 5, 'https://m.media-amazon.com/images/I/61kCtf4DC3L._AC_SY606_.jpg', 0),
+	(11, 8, 'Blade Runner 2049', '2017', 183, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', 3.5, 'https://antreducinema.fr/wp-content/uploads/2020/04/BLADE-RUNNER-2049-scaled.jpg', 0),
+	(12, 8, 'Dune', '2021', 155, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', 3.5, 'https://fr.web.img2.acsta.net/r_1280_720/pictures/21/10/07/11/00/4629229.jpg', 0),
+	(13, 9, 'GoldenEye', '1995', 130, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', 4.5, 'https://kifim.b-cdn.net/films/medium/1872757.jpg', 0);
 /*!40000 ALTER TABLE `film` ENABLE KEYS */;
 
 -- Listage de la structure de la table cinema_roman. genre
@@ -121,13 +134,14 @@ CREATE TABLE IF NOT EXISTS `genre` (
   `id_genre` int(11) NOT NULL AUTO_INCREMENT,
   `nom_genre` varchar(50) NOT NULL,
   PRIMARY KEY (`id_genre`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table cinema_roman.genre : ~2 rows (environ)
+-- Listage des données de la table cinema_roman.genre : ~3 rows (environ)
 /*!40000 ALTER TABLE `genre` DISABLE KEYS */;
 INSERT INTO `genre` (`id_genre`, `nom_genre`) VALUES
 	(1, 'Science-fiction'),
-	(2, 'Action-aventure');
+	(2, 'Action-aventure'),
+	(3, 'Western');
 /*!40000 ALTER TABLE `genre` ENABLE KEYS */;
 
 -- Listage de la structure de la table cinema_roman. personne
@@ -139,7 +153,7 @@ CREATE TABLE IF NOT EXISTS `personne` (
   `date_naissance` date NOT NULL,
   `photo` varchar(255) NOT NULL,
   PRIMARY KEY (`id_personne`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 -- Listage des données de la table cinema_roman.personne : ~9 rows (environ)
 /*!40000 ALTER TABLE `personne` DISABLE KEYS */;
@@ -152,7 +166,9 @@ INSERT INTO `personne` (`id_personne`, `nom_personne`, `prenom_personne`, `sexe`
 	(5, 'Ehrenreich', 'Alden', 'H', '1989-11-22', 'https://upload.wikimedia.org/wikipedia/commons/b/b7/Solo_A_Star_Wars_Story_Japan_Premiere_Red_Carpet_Alden_Ehrenreich_%2841008143870%29.jpg'),
 	(6, 'Spielberg', 'Steven', 'H', '1946-12-18', 'https://upload.wikimedia.org/wikipedia/commons/6/67/Steven_Spielberg_by_Gage_Skidmore.jpg'),
 	(7, 'Eastwood', 'Clint', 'H', '1930-05-31', 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Clint_Eastwood_at_2010_New_York_Film_Festival.jpg/640px-Clint_Eastwood_at_2010_New_York_Film_Festival.jpg'),
-	(8, 'Fisher', 'Carrie', 'F', '1956-08-21', 'https://upload.wikimedia.org/wikipedia/commons/d/d1/Carrie_Fisher_2013.jpg');
+	(8, 'Fisher', 'Carrie', 'F', '1956-08-21', 'https://upload.wikimedia.org/wikipedia/commons/d/d1/Carrie_Fisher_2013.jpg'),
+	(9, 'Villeneuve', 'Denis', 'H', '1967-08-03', 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Denis_Villeneuve_by_Gage_Skidmore.jpg/220px-Denis_Villeneuve_by_Gage_Skidmore.jpg'),
+	(10, 'Campbell', 'Martin ', 'H', '1943-08-24', 'http://t1.gstatic.com/licensed-image?q=tbn:ANd9GcQPKIlTF1RlXYXQ7ybfvefdfWgs5roda2Yg-PNSrIFVjel2YQhMBp3DSSKWR66f2rW5');
 /*!40000 ALTER TABLE `personne` ENABLE KEYS */;
 
 -- Listage de la structure de la table cinema_roman. realisateur
@@ -162,7 +178,7 @@ CREATE TABLE IF NOT EXISTS `realisateur` (
   PRIMARY KEY (`id_realisateur`),
   KEY `id_personne` (`id_personne`),
   CONSTRAINT `FK_realisateur_personne` FOREIGN KEY (`id_personne`) REFERENCES `personne` (`id_personne`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 -- Listage des données de la table cinema_roman.realisateur : ~5 rows (environ)
 /*!40000 ALTER TABLE `realisateur` DISABLE KEYS */;
@@ -171,28 +187,30 @@ INSERT INTO `realisateur` (`id_realisateur`, `id_personne`) VALUES
 	(1, 1),
 	(2, 2),
 	(3, 6),
-	(4, 7);
+	(4, 7),
+	(8, 9),
+	(9, 10);
 /*!40000 ALTER TABLE `realisateur` ENABLE KEYS */;
 
 -- Listage de la structure de la table cinema_roman. role
 CREATE TABLE IF NOT EXISTS `role` (
   `id_role` int(11) NOT NULL AUTO_INCREMENT,
   `nom_personnage` varchar(50) NOT NULL,
-  `photo` varchar(255) NOT NULL,
   PRIMARY KEY (`id_role`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 -- Listage des données de la table cinema_roman.role : ~6 rows (environ)
 /*!40000 ALTER TABLE `role` DISABLE KEYS */;
-INSERT INTO `role` (`id_role`, `nom_personnage`, `photo`) VALUES
-	(0, 'Han Solo', ''),
-	(1, 'Indiana Jones', ''),
-	(2, 'Luke Skywalker', ''),
-	(3, 'Rick Deckard', ''),
-	(4, 'Miko', ''),
-	(5, 'Leia Organa', '');
+INSERT INTO `role` (`id_role`, `nom_personnage`) VALUES
+	(0, 'Han Solo'),
+	(1, 'Indiana Jones'),
+	(2, 'Luke Skywalker'),
+	(3, 'Rick Deckard'),
+	(4, 'Miko'),
+	(5, 'Leia Organa');
 /*!40000 ALTER TABLE `role` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
-/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;

@@ -36,6 +36,7 @@ class CinemaController {
         $requete = $pdo->query('
         SELECT titre,annee_sortie,affiche,id_film
         FROM film
+        ORDER BY titre ASC
         ');
         require 'view/listFilms.php';
     }

@@ -1,6 +1,6 @@
 <?php ob_start() ?>
 
-<p> Il y a <?= $requete->rowCount() ?> genres</p>
+<p><?= $requete->rowCount() ?> genres</p>
 <div id='listGenres'>
             <?php
                 foreach($requete->fetchAll() as $genre) { ?>
