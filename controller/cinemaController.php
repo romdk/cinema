@@ -308,13 +308,27 @@ class CinemaController {
     }
 
     public function ajoutLike($id){
-        $pdo = Connect::seConnecter();
-        $requete = $pdo->prepare('
-        UPDATE film
-        SET likes = likes+1
-        WHERE film.id_film = :id
-        ');
-        $requete->execute(['id' => $id]);
+        if(!isset($_SESSION['like'])){
+            $pdo = Connect::seConnecter();
+            $requete = $pdo->prepare('
+            UPDATE film
+            SET likes = likes+1
+            WHERE film.id_film = :id
+            ');
+            $requete->execute(['id' => $id]);
+            $_SESSION["like"] = true;
+        }
+        
+        else if($_SESSION['like'] = true){
+            $pdo = Connect::seConnecter();
+            $requete = $pdo->prepare('
+            UPDATE film
+            SET likes = likes-1
+            WHERE film.id_film = :id
+            ');
+            $requete->execute(['id' => $id]);
+            unset($_SESSION["like"]);
+        }
         header("Location:index.php?action=detailFilm&id=$id");
     }
 }
