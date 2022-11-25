@@ -359,4 +359,9 @@ class CinemaController {
         }
         header("Location:index.php?action=detailFilm&id=$id");
     }
+
+    public function afficherAdmin(){
+        unset($_SESSION["message"]);
+        header("Location:admin.php");
+    }
 }

@@ -27,6 +27,7 @@ if(isset($_GET['action'])){
         case 'ajoutActeur' : $ctrlCinema->ajoutActeur(); break;
         case 'ajoutFilm' : $ctrlCinema->ajoutFilm(); break;
         case 'ajoutLike' : $ctrlCinema->ajoutLike($id); break;
+        case 'afficherAdmin' : $ctrlCinema->afficherAdmin(); break;
     }
 }
 

@@ -25,7 +25,7 @@
             <li><a href="index.php?action=listActeurs">Acteurs</a></li>
             <li><a href="index.php?action=listGenres">Genres</a></li>
             <li><a href="index.php?action=listRoles">Roles</a></li>
-            <li><a href="admin.php"><i class="fa-solid fa-screwdriver-wrench"></i> Admin</a></li>
+            <li><a href="index.php?action=afficherAdmin"><i class="fa-solid fa-screwdriver-wrench"></i> Admin</a></li>
         </ul>
     </nav>
     <main>
