@@ -6,6 +6,29 @@ use Model\Connect;
 class CinemaController {
     public function listFilms(){
         $pdo = Connect::seConnecter();
+
+        $suggestionFilm = $pdo->query('
+        SELECT titre, id_film
+        FROM film
+        ORDER BY titre ASC
+        ');
+
+        $suggestionRealisateur = $pdo->query('
+        SELECT nom_personne,prenom_personne,id_realisateur
+        FROM realisateur
+        INNER JOIN personne
+        ON personne.id_personne = realisateur.id_personne
+        ORDER BY prenom_personne ASC
+        ');
+
+        $suggestionActeur = $pdo->query('
+        SELECT nom_personne,prenom_personne,id_acteur
+        FROM acteur
+        INNER JOIN personne
+        ON personne.id_personne = acteur.id_personne
+        ORDER BY prenom_personne ASC
+        ');
+
         $requete = $pdo->query('
         SELECT titre,annee_sortie,affiche,id_film
         FROM film
@@ -15,6 +38,29 @@ class CinemaController {
 
     public function listRealisateurs(){
         $pdo = Connect::seConnecter();
+
+        $suggestionFilm = $pdo->query('
+        SELECT titre, id_film
+        FROM film
+        ORDER BY titre ASC
+        ');
+
+        $suggestionRealisateur = $pdo->query('
+        SELECT nom_personne,prenom_personne,id_realisateur
+        FROM realisateur
+        INNER JOIN personne
+        ON personne.id_personne = realisateur.id_personne
+        ORDER BY prenom_personne ASC
+        ');
+
+        $suggestionActeur = $pdo->query('
+        SELECT nom_personne,prenom_personne,id_acteur
+        FROM acteur
+        INNER JOIN personne
+        ON personne.id_personne = acteur.id_personne
+        ORDER BY prenom_personne ASC
+        ');
+
         $requete = $pdo->query('
         SELECT prenom_personne, nom_personne,id_realisateur,photo
         FROM personne
@@ -27,6 +73,29 @@ class CinemaController {
 
     public function listActeurs(){
         $pdo = Connect::seConnecter();
+
+        $suggestionFilm = $pdo->query('
+        SELECT titre, id_film
+        FROM film
+        ORDER BY titre ASC
+        ');
+
+        $suggestionRealisateur = $pdo->query('
+        SELECT nom_personne,prenom_personne,id_realisateur
+        FROM realisateur
+        INNER JOIN personne
+        ON personne.id_personne = realisateur.id_personne
+        ORDER BY prenom_personne ASC
+        ');
+
+        $suggestionActeur = $pdo->query('
+        SELECT nom_personne,prenom_personne,id_acteur
+        FROM acteur
+        INNER JOIN personne
+        ON personne.id_personne = acteur.id_personne
+        ORDER BY prenom_personne ASC
+        ');
+
         $requete = $pdo->query('
         SELECT prenom_personne, nom_personne,id_acteur,photo
         FROM personne
@@ -39,6 +108,29 @@ class CinemaController {
 
     public function listGenres(){
         $pdo = Connect::seConnecter();
+
+        $suggestionFilm = $pdo->query('
+        SELECT titre, id_film
+        FROM film
+        ORDER BY titre ASC
+        ');
+
+        $suggestionRealisateur = $pdo->query('
+        SELECT nom_personne,prenom_personne,id_realisateur
+        FROM realisateur
+        INNER JOIN personne
+        ON personne.id_personne = realisateur.id_personne
+        ORDER BY prenom_personne ASC
+        ');
+
+        $suggestionActeur = $pdo->query('
+        SELECT nom_personne,prenom_personne,id_acteur
+        FROM acteur
+        INNER JOIN personne
+        ON personne.id_personne = acteur.id_personne
+        ORDER BY prenom_personne ASC
+        ');
+
         $requete = $pdo->query('
         SELECT nom_genre, id_genre
         FROM genre
@@ -49,6 +141,29 @@ class CinemaController {
 
     public function listRoles(){
         $pdo = Connect::seConnecter();
+
+        $suggestionFilm = $pdo->query('
+        SELECT titre, id_film
+        FROM film
+        ORDER BY titre ASC
+        ');
+
+        $suggestionRealisateur = $pdo->query('
+        SELECT nom_personne,prenom_personne,id_realisateur
+        FROM realisateur
+        INNER JOIN personne
+        ON personne.id_personne = realisateur.id_personne
+        ORDER BY prenom_personne ASC
+        ');
+
+        $suggestionActeur = $pdo->query('
+        SELECT nom_personne,prenom_personne,id_acteur
+        FROM acteur
+        INNER JOIN personne
+        ON personne.id_personne = acteur.id_personne
+        ORDER BY prenom_personne ASC
+        ');
+
         $requete = $pdo->query('
         SELECT nom_personnage,id_role
         FROM role
@@ -59,6 +174,29 @@ class CinemaController {
 
     public function detailFilm($id){
         $pdo = Connect::seConnecter();
+
+        $suggestionFilm = $pdo->query('
+        SELECT titre, id_film
+        FROM film
+        ORDER BY titre ASC
+        ');
+
+        $suggestionRealisateur = $pdo->query('
+        SELECT nom_personne,prenom_personne,id_realisateur
+        FROM realisateur
+        INNER JOIN personne
+        ON personne.id_personne = realisateur.id_personne
+        ORDER BY prenom_personne ASC
+        ');
+
+        $suggestionActeur = $pdo->query('
+        SELECT nom_personne,prenom_personne,id_acteur
+        FROM acteur
+        INNER JOIN personne
+        ON personne.id_personne = acteur.id_personne
+        ORDER BY prenom_personne ASC
+        ');
+
         $requete = $pdo->prepare('
         SELECT titre, annee_sortie, duree, synopsis, note, affiche, prenom_personne, nom_personne, nom_genre, likes,film.id_realisateur
         FROM film
@@ -89,6 +227,29 @@ class CinemaController {
 
     public function detailRealisateur($id){
         $pdo = Connect::seConnecter();
+
+        $suggestionFilm = $pdo->query('
+        SELECT titre, id_film
+        FROM film
+        ORDER BY titre ASC
+        ');
+
+        $suggestionRealisateur = $pdo->query('
+        SELECT nom_personne,prenom_personne,id_realisateur
+        FROM realisateur
+        INNER JOIN personne
+        ON personne.id_personne = realisateur.id_personne
+        ORDER BY prenom_personne ASC
+        ');
+
+        $suggestionActeur = $pdo->query('
+        SELECT nom_personne,prenom_personne,id_acteur
+        FROM acteur
+        INNER JOIN personne
+        ON personne.id_personne = acteur.id_personne
+        ORDER BY prenom_personne ASC
+        ');
+
         $requete = $pdo->prepare('
         SELECT prenom_personne, nom_personne,date_naissance
         FROM personne
@@ -112,6 +273,29 @@ class CinemaController {
 
     public function detailActeur($id){
         $pdo = Connect::seConnecter();
+
+        $suggestionFilm = $pdo->query('
+        SELECT titre, id_film
+        FROM film
+        ORDER BY titre ASC
+        ');
+
+        $suggestionRealisateur = $pdo->query('
+        SELECT nom_personne,prenom_personne,id_realisateur
+        FROM realisateur
+        INNER JOIN personne
+        ON personne.id_personne = realisateur.id_personne
+        ORDER BY prenom_personne ASC
+        ');
+
+        $suggestionActeur = $pdo->query('
+        SELECT nom_personne,prenom_personne,id_acteur
+        FROM acteur
+        INNER JOIN personne
+        ON personne.id_personne = acteur.id_personne
+        ORDER BY prenom_personne ASC
+        ');
+
         $requete = $pdo->prepare('
         SELECT prenom_personne, nom_personne,date_naissance
         FROM personne
@@ -135,6 +319,29 @@ class CinemaController {
 
     public function detailGenre($id){
         $pdo = Connect::seConnecter();
+
+        $suggestionFilm = $pdo->query('
+        SELECT titre, id_film
+        FROM film
+        ORDER BY titre ASC
+        ');
+
+        $suggestionRealisateur = $pdo->query('
+        SELECT nom_personne,prenom_personne,id_realisateur
+        FROM realisateur
+        INNER JOIN personne
+        ON personne.id_personne = realisateur.id_personne
+        ORDER BY prenom_personne ASC
+        ');
+
+        $suggestionActeur = $pdo->query('
+        SELECT nom_personne,prenom_personne,id_acteur
+        FROM acteur
+        INNER JOIN personne
+        ON personne.id_personne = acteur.id_personne
+        ORDER BY prenom_personne ASC
+        ');
+
         $requete = $pdo->prepare('
         SELECT nom_genre
         FROM genre
@@ -154,6 +361,29 @@ class CinemaController {
 
     public function detailRole($id){
         $pdo = Connect::seConnecter();
+
+        $suggestionFilm = $pdo->query('
+        SELECT titre, id_film
+        FROM film
+        ORDER BY titre ASC
+        ');
+
+        $suggestionRealisateur = $pdo->query('
+        SELECT nom_personne,prenom_personne,id_realisateur
+        FROM realisateur
+        INNER JOIN personne
+        ON personne.id_personne = realisateur.id_personne
+        ORDER BY prenom_personne ASC
+        ');
+
+        $suggestionActeur = $pdo->query('
+        SELECT nom_personne,prenom_personne,id_acteur
+        FROM acteur
+        INNER JOIN personne
+        ON personne.id_personne = acteur.id_personne
+        ORDER BY prenom_personne ASC
+        ');
+
         $requete = $pdo->prepare('
         SELECT nom_personnage
         FROM role
@@ -361,6 +591,29 @@ class CinemaController {
     }
 
     public function afficherAdmin(){
+        $pdo = Connect::seConnecter();
+        $suggestionFilm = $pdo->query('
+        SELECT titre, id_film
+        FROM film
+        ORDER BY titre ASC
+        ');
+
+        $suggestionRealisateur = $pdo->query('
+        SELECT nom_personne,prenom_personne,id_realisateur
+        FROM realisateur
+        INNER JOIN personne
+        ON personne.id_personne = realisateur.id_personne
+        ORDER BY prenom_personne ASC
+        ');
+
+        $suggestionActeur = $pdo->query('
+        SELECT nom_personne,prenom_personne,id_acteur
+        FROM acteur
+        INNER JOIN personne
+        ON personne.id_personne = acteur.id_personne
+        ORDER BY prenom_personne ASC
+        ');
+        
         unset($_SESSION["message"]);
         header("Location:admin.php");
     }
