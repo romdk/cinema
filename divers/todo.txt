@@ -1,5 +1,4 @@
 faire fonctionner searchbar
-afficher messages d'ajout
 mettre like en session
 
 
