@@ -1,3 +1,6 @@
+
+
+// ------------------------------------------NOTE----------------------------------------------
 let note = document.getElementById("note");
 let result = note.textContent;
 const etoile1 = document.getElementById("etoile1");
@@ -5,7 +8,6 @@ const etoile2 = document.getElementById("etoile2");
 const etoile3 = document.getElementById("etoile3");
 const etoile4 = document.getElementById("etoile4");
 const etoile5 = document.getElementById("etoile5");
-
 
 function afficherNote() {
   etoile1.classList.remove("full", "half");

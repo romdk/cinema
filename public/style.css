@@ -37,6 +37,7 @@ nav{
     8.4px 8.4px 12.5px rgba(0, 0, 0, 0.014),
     20px 20px 30px rgba(0, 0, 0, 0.02)
     ;
+    z-index: 2;
 }
 
 nav h1{
@@ -790,6 +791,56 @@ text-transform: uppercase;
     color: #eebe00;
 }
 /* --------------------------------------ADMIN------------------------------------------ */
+
+@keyframes animate{
+    0% {
+        transform: translateY(0px);        
+    }
+    5% {
+        transform: translateY(30px);        
+    }
+    90%{
+        transform: translateY(30px);
+    }
+    100%{
+        transform: translateY(-30px);
+    }
+}
+
+.message{
+    position: absolute;
+    left: 0;
+    top: 75px;
+    width: 100vw;
+    height: 30px;
+    background-color: #2ed373;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    text-transform: uppercase;
+    font-weight: 500;
+    animation: animate 4s;
+}
+
+.erreur{
+    position: absolute;
+    left: 0;
+    top: 75px;
+    width: 100vw;
+    height: 30px;
+    background-color: #d32e2e;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    text-transform: uppercase;
+    font-weight: 500;
+    animation: animate 4s;
+}
+
+.show{
+    transform: translateY(30px);
+}
+
 #admin input{
     border-radius: 3px;
     height: 25px;

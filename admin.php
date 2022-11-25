@@ -1,5 +1,10 @@
-<?php ob_start() ?>
+<?php 
+    ob_start();
+    session_start();
+
+?>
     <div id='admin'>
+        <div><?php if(isset($_SESSION['message'])){ echo $_SESSION['message'];}?></div>
         <div class='singleForm'>
             <div class='adminForm'>
                 <h4>Ajouter un film</h4>
