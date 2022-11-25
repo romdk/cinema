@@ -222,13 +222,15 @@ class CinemaController {
             $prenomPersonne =filter_input(INPUT_POST,'prenom_personne',FILTER_SANITIZE_SPECIAL_CHARS);
             $sexe =filter_input(INPUT_POST,'sexe',FILTER_SANITIZE_SPECIAL_CHARS);
             $dateNaissance =filter_input(INPUT_POST,'date_naissance',FILTER_SANITIZE_SPECIAL_CHARS);
+            $photo =filter_input(INPUT_POST,'photo',FILTER_SANITIZE_SPECIAL_CHARS);
 
-            if($nomPersonne && $prenomPersonne && $sexe && $dateNaissance){                
+
+            if($nomPersonne && $prenomPersonne && $sexe && $dateNaissance && $photo){                
                 $pdo = Connect::seConnecter();
                 
                 $requete = $pdo->query('
-                INSERT INTO personne(nom_personne,prenom_personne,sexe,date_naissance)
-                VALUES ("'.$nomPersonne.'","'.$prenomPersonne.'","'.$sexe.'","'.$dateNaissance.'")
+                INSERT INTO personne(nom_personne,prenom_personne,sexe,date_naissance,photo)
+                VALUES ("'.$nomPersonne.'","'.$prenomPersonne.'","'.$sexe.'","'.$dateNaissance.'","'.$photo.'")
                 ');
                 
                 $id = $pdo->lastInsertId();
@@ -247,13 +249,14 @@ class CinemaController {
             $prenomPersonne =filter_input(INPUT_POST,'prenom_personne',FILTER_SANITIZE_SPECIAL_CHARS);
             $sexe =filter_input(INPUT_POST,'sexe',FILTER_SANITIZE_SPECIAL_CHARS);
             $dateNaissance =filter_input(INPUT_POST,'date_naissance',FILTER_SANITIZE_SPECIAL_CHARS);
+            $photo =filter_input(INPUT_POST,'photo',FILTER_SANITIZE_SPECIAL_CHARS);
 
-            if($nomPersonne && $prenomPersonne && $sexe && $dateNaissance){
+            if($nomPersonne && $prenomPersonne && $sexe && $dateNaissance && $photo){
                 $pdo = Connect::seConnecter();
 
                 $requete = $pdo->query('
-                INSERT INTO personne(nom_personne,prenom_personne,sexe,date_naissance)
-                VALUES ("'.$nomPersonne.'","'.$prenomPersonne.'","'.$sexe.'","'.$dateNaissance.'")
+                INSERT INTO personne(nom_personne,prenom_personne,sexe,date_naissance,photo)
+                VALUES ("'.$nomPersonne.'","'.$prenomPersonne.'","'.$sexe.'","'.$dateNaissance.'","'.$photo.'")
                 ');
 
                 $id = $pdo->lastInsertId();

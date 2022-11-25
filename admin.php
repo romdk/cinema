@@ -71,7 +71,7 @@
                     <div>
                         <label>
                             Affiche:
-                            <input type='text' name='affiche' placeholder='Inserer url de l'affiche'>
+                            <input type='text' name='affiche' placeholder="Inserer l'url de l'affiche">
                         </label>
                     </div>
                 </div>
@@ -114,6 +114,12 @@
                         <input type='date' name='date_naissance'>
                     </label>
                 </div>
+                <div>
+                    <label>
+                        Affiche:
+                        <input type='text' name='photo' placeholder="Inserer l'url de la photo">
+                    </label>
+                </div>
             </div>
                 <div class='btnAjouter'>
                     <input type='submit' name='ajouterRealisateur' value='Ajouter le réalisateur' >
@@ -151,6 +157,12 @@
                     <label>
                         date:
                         <input type='date' name='date_naissance'>
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        Affiche:
+                        <input type='text' name='photo' placeholder="Inserer l'url de la photo">
                     </label>
                 </div>
             </div>
