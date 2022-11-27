@@ -24,9 +24,9 @@ CREATE TABLE IF NOT EXISTS `acteur` (
   PRIMARY KEY (`id_acteur`),
   KEY `id_personne` (`id_personne`),
   CONSTRAINT `FK_acteur_personne` FOREIGN KEY (`id_personne`) REFERENCES `personne` (`id_personne`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table cinema_roman.acteur : ~5 rows (environ)
+-- Listage des données de la table cinema_roman.acteur : ~12 rows (environ)
 /*!40000 ALTER TABLE `acteur` DISABLE KEYS */;
 INSERT INTO `acteur` (`id_acteur`, `id_personne`) VALUES
 	(1, 3),
@@ -68,7 +68,8 @@ INSERT INTO `associer` (`id_film`, `id_genre`) VALUES
 	(9, 1),
 	(10, 1),
 	(11, 1),
-	(13, 2);
+	(13, 2),
+	(5, 1);
 /*!40000 ALTER TABLE `associer` ENABLE KEYS */;
 
 -- Listage de la structure de la table cinema_roman. figurer
@@ -84,7 +85,7 @@ CREATE TABLE IF NOT EXISTS `figurer` (
   CONSTRAINT `FK_figurer_role` FOREIGN KEY (`id_role`) REFERENCES `role` (`id_role`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Listage des données de la table cinema_roman.figurer : ~13 rows (environ)
+-- Listage des données de la table cinema_roman.figurer : ~25 rows (environ)
 /*!40000 ALTER TABLE `figurer` DISABLE KEYS */;
 INSERT INTO `figurer` (`id_film`, `id_acteur`, `id_role`) VALUES
 	(1, 1, 0),
@@ -157,7 +158,7 @@ CREATE TABLE IF NOT EXISTS `genre` (
   PRIMARY KEY (`id_genre`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table cinema_roman.genre : ~3 rows (environ)
+-- Listage des données de la table cinema_roman.genre : ~2 rows (environ)
 /*!40000 ALTER TABLE `genre` DISABLE KEYS */;
 INSERT INTO `genre` (`id_genre`, `nom_genre`) VALUES
 	(1, 'Science-fiction'),
@@ -174,9 +175,9 @@ CREATE TABLE IF NOT EXISTS `personne` (
   `date_naissance` date NOT NULL,
   `photo` varchar(255) NOT NULL,
   PRIMARY KEY (`id_personne`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table cinema_roman.personne : ~11 rows (environ)
+-- Listage des données de la table cinema_roman.personne : ~17 rows (environ)
 /*!40000 ALTER TABLE `personne` DISABLE KEYS */;
 INSERT INTO `personne` (`id_personne`, `nom_personne`, `prenom_personne`, `sexe`, `date_naissance`, `photo`) VALUES
 	(0, 'Lucas', 'George', 'H', '1944-05-14', 'https://upload.wikimedia.org/wikipedia/commons/a/a0/George_Lucas_cropped_2009.jpg'),
@@ -225,9 +226,9 @@ CREATE TABLE IF NOT EXISTS `role` (
   `id_role` int(11) NOT NULL AUTO_INCREMENT,
   `nom_personnage` varchar(50) NOT NULL,
   PRIMARY KEY (`id_role`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
--- Listage des données de la table cinema_roman.role : ~6 rows (environ)
+-- Listage des données de la table cinema_roman.role : ~12 rows (environ)
 /*!40000 ALTER TABLE `role` DISABLE KEYS */;
 INSERT INTO `role` (`id_role`, `nom_personnage`) VALUES
 	(0, 'Han Solo'),
