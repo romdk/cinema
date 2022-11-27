@@ -229,7 +229,7 @@ class CinemaController {
         ');
 
         $requete = $pdo->prepare('
-        SELECT titre, annee_sortie, duree, synopsis, note, affiche, prenom_personne, nom_personne, nom_genre, likes,film.id_realisateur
+        SELECT titre, annee_sortie, duree, synopsis, note, affiche, prenom_personne, nom_personne, nom_genre,genre.id_genre, likes,film.id_realisateur
         FROM film
         INNER JOIN realisateur
         ON film.id_realisateur = realisateur.id_realisateur
@@ -667,7 +667,36 @@ class CinemaController {
         INNER JOIN personne
         ON personne.id_personne = acteur.id_personne
         ORDER BY prenom_personne ASC
-        ');        
+        ');
+        
+        $realisateurs = $pdo->query('
+        SELECT nom_personne, prenom_personne, id_realisateur
+        FROM personne
+        INNER JOIN realisateur
+        ON personne.id_personne = realisateur.id_personne
+        ');
+
+        $genres = $pdo->query('
+        SELECT nom_genre, id_genre
+        FROM genre
+        ');
+
+        $films = $pdo->query('
+        SELECT titre, id_film
+        FROM film
+        ');
+
+        $personnages = $pdo->query('
+        SELECT nom_personnage, id_role
+        FROM role
+        ');
+
+        $acteurs = $pdo->query('
+        SELECT nom_personne, prenom_personne, id_acteur
+        FROM personne
+        INNER JOIN acteur
+        ON personne.id_personne = acteur.id_personne
+        ');
         require 'view/admin.php';
     }
 }

@@ -23,11 +23,9 @@
                     <label>
                         Réalisateur:
                         <select name='realisateur'>
-                            <option value='0'>George Lucas</option>
-                            <option value='1'>Ridley Scott</option>
-                            <option value='2'>Ron howard</option>
-                            <option value='3'>Steven Spielberg</option>
-                            <option value='4'>Clint Eastwood</option>
+                            <?php foreach($realisateurs->fetchAll() as $realisateur){ ?>
+                                <option value = "<?=$realisateur['id_realisateur']?>"><?= $realisateur['prenom_personne'].' '.$realisateur['nom_personne'] ?></option>
+                            <?php } ?>                   
                         </select>
                     </label>
                 </div>
@@ -42,9 +40,9 @@
                 <div class='row'>
                     <label>Genre:
                         <select name='genre[]' multiple>
-                            <option value='1'>Science-fiction</option>
-                            <option value='2'>Action-aventure</option>
-                            <option value='3'>Western</option>
+                            <?php foreach($genres->fetchAll() as $genre){ ?>
+                                <option value = "<?=$genre['id_genre']?>"><?=$genre['nom_genre']?></option>
+                            <?php } ?>    
                         </select>
                     </label>
                     <div>
@@ -200,13 +198,9 @@
                         <label>
                             Film:
                             <select name='film'>
-                                <option value='1'>Star Wars IV</option>
-                                <option value='2'>Blade Runner</option>
-                                <option value='3'>Star Wars V</option>
-                                <option value='4'>Indiana Jones</option>
-                                <option value='5'>Solo: A Star Wars Story</option>
-                                <option value='6'>Cry Macho</option>
-                                <option value='7'>Star Wars VI</option>
+                                <?php foreach($films->fetchAll() as $film){ ?>
+                                    <option value = "<?=$film['id_film']?>"><?= $film['titre'] ?></option>
+                                <?php } ?> 
                             </select>
                         </label>
                     </div>
@@ -214,12 +208,9 @@
                     <label>
                     Personnage:
                         <select name='personnage'>
-                            <option value='0'>Han Solo</option>
-                            <option value='1'>Indiana Jones</option>
-                            <option value='2'>Luke Skywalker</option>
-                            <option value='3'>Rick Deckard</option>
-                            <option value='4'>Miko</option>
-                            <option value='5'>Leia Organa</option>
+                            <?php foreach($personnages->fetchAll() as $personnage){ ?>
+                                <option value = "<?=$personnage['id_role']?>"><?= $personnage['nom_personnage'] ?></option>
+                            <?php } ?> 
                         </select>
                     </label>
                     </div>
@@ -227,11 +218,9 @@
                         <label>
                             Acteur:
                             <select name='acteur[]' multiple>
-                                <option value='1'>Harrison Ford</option>
-                                <option value='2'>Mark Hamill</option>
-                                <option value='3'>Alden Ehrenreich</option>
-                                <option value='4'>Clint Eastwood</option>
-                                <option value='5'>Carrie Fisher</option>
+                                <?php foreach($acteurs->fetchAll() as $acteur){ ?>
+                                    <option value = "<?=$acteur['id_acteur']?>"><?= $acteur['prenom_personne'].' '.$acteur['nom_personne'] ?></option>
+                                <?php } ?>                                 
                             </select>
                         </label>
                     </div>
