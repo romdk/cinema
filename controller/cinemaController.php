@@ -5,6 +5,7 @@ use Model\Connect;
 
 class CinemaController {
     public function listFilms(){
+        unset($_SESSION["message"]);
         $pdo = Connect::seConnecter();
 
         $suggestionFilm = $pdo->query('
@@ -42,6 +43,7 @@ class CinemaController {
     }
 
     public function listRealisateurs(){
+        unset($_SESSION["message"]);
         $pdo = Connect::seConnecter();
 
         $suggestionFilm = $pdo->query('
@@ -81,6 +83,7 @@ class CinemaController {
     }
 
     public function listActeurs(){
+        unset($_SESSION["message"]);
         $pdo = Connect::seConnecter();
 
         $suggestionFilm = $pdo->query('
@@ -120,6 +123,7 @@ class CinemaController {
     }
 
     public function listGenres(){
+        unset($_SESSION["message"]);
         $pdo = Connect::seConnecter();
 
         $suggestionFilm = $pdo->query('
@@ -157,6 +161,7 @@ class CinemaController {
     }
 
     public function listRoles(){
+        unset($_SESSION["message"]);
         $pdo = Connect::seConnecter();
 
         $suggestionFilm = $pdo->query('
@@ -194,6 +199,7 @@ class CinemaController {
     }
 
     public function detailFilm($id){
+        unset($_SESSION["message"]);
         $pdo = Connect::seConnecter();
 
         $suggestionFilm = $pdo->query('
@@ -251,6 +257,7 @@ class CinemaController {
     }
 
     public function detailRealisateur($id){
+        unset($_SESSION["message"]);
         $pdo = Connect::seConnecter();
 
         $suggestionFilm = $pdo->query('
@@ -301,6 +308,7 @@ class CinemaController {
     }
 
     public function detailActeur($id){
+        unset($_SESSION["message"]);
         $pdo = Connect::seConnecter();
 
         $suggestionFilm = $pdo->query('
@@ -351,6 +359,7 @@ class CinemaController {
     }
 
     public function detailGenre($id){
+        unset($_SESSION["message"]);
         $pdo = Connect::seConnecter();
 
         $suggestionFilm = $pdo->query('
@@ -397,6 +406,7 @@ class CinemaController {
     }
 
     public function detailRole($id){
+        unset($_SESSION["message"]);
         $pdo = Connect::seConnecter();
 
         $suggestionFilm = $pdo->query('
@@ -464,11 +474,11 @@ class CinemaController {
                 INSERT INTO role(nom_personnage)
                 VALUES ("'.$nomPersonnage.'")
                 ');
-                header("Location:admin.php");
+                header("Location:index.php?action=afficherAdmin");
                 $_SESSION['message'] = "<div class='message'>Rôle ajouté</div>";
             }
             else{
-                header("Location:admin.php");
+                header("Location:index.php?action=afficherAdmin");
                 $_SESSION['message'] = "<div class='erreur'>Formulaire incomplet</div>";
             }
         }        
@@ -489,12 +499,12 @@ class CinemaController {
                     INSERT INTO figurer(id_film,id_acteur,id_role)
                     VALUES("'.$film.'","'.$acteur.'","'.$personnage.'")
                     ');
-                    header("Location:admin.php");
+                    header("Location:index.php?action=afficherAdmin");
                     $_SESSION['message'] = "<div class='message'>Casting ajouté</div>";
                 }
             }
             else{
-                header("Location:admin.php");
+                header("Location:index.php?action=afficherAdmin");
                 $_SESSION['message'] = "<div class='erreur'>Formulaire incomplet</div>";
             }
         }
@@ -522,11 +532,11 @@ class CinemaController {
                 INSERT INTO realisateur(id_personne)
                 VALUES("'.$id.'") 
                 ');
-                header("Location:admin.php");
+                header("Location:index.php?action=afficherAdmin");
                 $_SESSION['message'] = "<div class='message'>Réalisateur ajouté</div>";
             }
             else{
-                header("Location:admin.php");
+                header("Location:index.php?action=afficherAdmin");
                 $_SESSION['message'] = "<div class='erreur'>Formulaire incomplet</div>";
             }
         }
@@ -553,11 +563,11 @@ class CinemaController {
                 INSERT INTO acteur(id_personne)
                 VALUES("'.$id.'") 
                 '); 
-                header("Location:admin.php");
+                header("Location:index.php?action=afficherAdmin");
                 $_SESSION['message'] = "<div class='message'>Acteur ajouté</div>";
             }
             else{
-                header("Location:admin.php");
+                header("Location:index.php?action=afficherAdmin");
                 $_SESSION['message'] = "<div class='erreur'>Formulaire incomplet</div>";
             }
         }
@@ -596,11 +606,11 @@ class CinemaController {
                     WHERE id_genre IS NULL
                     ');
                 }
-                header("Location:admin.php");
+                header("Location:index.php?action=afficherAdmin");
                 $_SESSION['message'] = "<div class='message'>Film ajouté</div>";
             }
             else{
-                header("Location:admin.php");
+                header("Location:index.php?action=afficherAdmin");
                 $_SESSION['message'] = "<div class='erreur'>Formulaire incomplet</div>";
             }
         }
@@ -657,9 +667,7 @@ class CinemaController {
         INNER JOIN personne
         ON personne.id_personne = acteur.id_personne
         ORDER BY prenom_personne ASC
-        ');
-        
-        unset($_SESSION["message"]);
-        header("Location:admin.php");
+        ');        
+        require 'view/admin.php';
     }
 }

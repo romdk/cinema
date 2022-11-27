@@ -21,26 +21,26 @@
         <div class='searchbar' >
             <input type="text" id="searchBar" onkeyup="affSuggestions()"  placeholder="Rechercher un film, un réalisateur, un acteur..."><i class="fa-solid fa-magnifying-glass"></i>
             <!-- onblur="masqSuggestions()" -->
-        <ul id='suggestions'>
-            <?php 
-            foreach($suggestionRealisateur->fetchAll() as $realisateur) { ?>
-                <li class='suggestion'>
-                    <a href="index.php?action=detailRealisateur&id=<?= $realisateur['id_realisateur'] ?>">
-                        <div class='miniature'><img src="<?= $realisateur['photo'] ?>" alt=""></div>
-                        <p><?= $realisateur['prenom_personne'].' '.$realisateur['nom_personne'] ?></p>
-                        <p>Réalisateur</p>
-                    </a>
-                </li>
-            <?php } ?>
-        <?php 
-            foreach($suggestionActeur->fetchAll() as $acteur) { ?>
-                <li class='suggestion'>
-                    <a href="index.php?action=detailActeur&id=<?= $acteur['id_acteur'] ?>">
-                        <div class='miniature'><img src="<?= $acteur['photo'] ?>" alt=""></div>
-                        <p><?= $acteur['prenom_personne'].' '.$acteur['nom_personne'] ?></p>
-                        <p>Acteur</p>
-                    </a>
-                </li>
+            <ul id='suggestions'>
+                <?php 
+                    foreach($suggestionRealisateur->fetchAll() as $realisateur) { ?>
+                        <li class='suggestion'>
+                            <a href="index.php?action=detailRealisateur&id=<?= $realisateur['id_realisateur'] ?>">
+                                <div class='miniature'><img src="<?= $realisateur['photo'] ?>" alt=""></div>
+                                <p><?= $realisateur['prenom_personne'].' '.$realisateur['nom_personne'] ?></p>
+                                <p>Réalisateur</p>
+                            </a>
+                        </li>
+                <?php } ?>
+                <?php 
+                    foreach($suggestionActeur->fetchAll() as $acteur) { ?>
+                        <li class='suggestion'>
+                            <a href="index.php?action=detailActeur&id=<?= $acteur['id_acteur'] ?>">
+                                <div class='miniature'><img src="<?= $acteur['photo'] ?>" alt=""></div>
+                                <p><?= $acteur['prenom_personne'].' '.$acteur['nom_personne'] ?></p>
+                                <p>Acteur</p>
+                            </a>
+                        </li>
                 <?php } ?>
                 <?php 
                     foreach($suggestionFilm->fetchAll() as $film) { ?>
@@ -52,13 +52,9 @@
                                 <p>(<?= $film['annee_sortie'] ?>)</p>
                             </a>
                         </li>
-                    <?php } ?>
-            
-        </ul>
-
-
-
-    </div>
+                <?php } ?>
+            </ul>
+        </div>
     
         <ul id='rubriques'>
             <li><a href="index.php?action=listFilms">Films</a></li>
