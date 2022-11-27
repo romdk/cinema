@@ -709,15 +709,15 @@ text-transform: uppercase;
     font-weight: 600;
 }
 
-.fa-star{
+#detailFilm .fa-star{
     color: #cccccc;
 }
 
-.full {
+#detailFilm .full {
     color: #fecc00;
 }
 
-.half {
+#detailFilm .half {
     background: -webkit-linear-gradient(0deg,#fecc00 50%, #cccccc 50%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -948,14 +948,15 @@ text-transform: uppercase;
 
 #admin input{
     border-radius: 3px;
+    padding: 5px;
     height: 25px;
     border: none;
 }
 
 #admin select{
     border-radius: 3px;
+    padding: 5px;
     border: none;
-
 }
 
 #admin textarea{
@@ -1039,9 +1040,6 @@ text-transform: uppercase;
         8.4px 8.4px 12.5px rgba(0, 0, 0, 0.014),
         20px 20px 30px rgba(0, 0, 0, 0.02);
         transition: .2s;
-   }
-    .doubleForm:nth-child(3) .adminForm:nth-child(1) .btnAjouter input{
-        margin-top: 148px;
    }
 
    .btnAjouter input:hover{
