@@ -19,7 +19,7 @@ class CinemaController {
         ');
 
         $suggestionRealisateur = $pdo->query('
-        SELECT nom_personne,prenom_personne,id_realisateur, photo
+        SELECT nom_personne,prenom_personne,id_realisateur,photo,sexe
         FROM realisateur
         INNER JOIN personne
         ON personne.id_personne = realisateur.id_personne
@@ -27,7 +27,7 @@ class CinemaController {
         ');
 
         $suggestionActeur = $pdo->query('
-        SELECT nom_personne,prenom_personne,id_acteur,photo
+        SELECT nom_personne,prenom_personne,id_acteur,photo,sexe
         FROM acteur
         INNER JOIN personne
         ON personne.id_personne = acteur.id_personne
@@ -57,7 +57,7 @@ class CinemaController {
         ');
 
         $suggestionRealisateur = $pdo->query('
-        SELECT nom_personne,prenom_personne,id_realisateur, photo
+        SELECT nom_personne,prenom_personne,id_realisateur,photo,sexe
         FROM realisateur
         INNER JOIN personne
         ON personne.id_personne = realisateur.id_personne
@@ -65,7 +65,7 @@ class CinemaController {
         ');
 
         $suggestionActeur = $pdo->query('
-        SELECT nom_personne,prenom_personne,id_acteur,photo
+        SELECT nom_personne,prenom_personne,id_acteur,photo,sexe
         FROM acteur
         INNER JOIN personne
         ON personne.id_personne = acteur.id_personne
@@ -97,7 +97,7 @@ class CinemaController {
         ');
 
         $suggestionRealisateur = $pdo->query('
-        SELECT nom_personne,prenom_personne,id_realisateur, photo
+        SELECT nom_personne,prenom_personne,id_realisateur,photo,sexe
         FROM realisateur
         INNER JOIN personne
         ON personne.id_personne = realisateur.id_personne
@@ -105,7 +105,7 @@ class CinemaController {
         ');
 
         $suggestionActeur = $pdo->query('
-        SELECT nom_personne,prenom_personne,id_acteur,photo
+        SELECT nom_personne,prenom_personne,id_acteur,photo,sexe
         FROM acteur
         INNER JOIN personne
         ON personne.id_personne = acteur.id_personne
@@ -137,7 +137,7 @@ class CinemaController {
         ');
 
         $suggestionRealisateur = $pdo->query('
-        SELECT nom_personne,prenom_personne,id_realisateur, photo
+        SELECT nom_personne,prenom_personne,id_realisateur,photo,sexe
         FROM realisateur
         INNER JOIN personne
         ON personne.id_personne = realisateur.id_personne
@@ -145,7 +145,7 @@ class CinemaController {
         ');
 
         $suggestionActeur = $pdo->query('
-        SELECT nom_personne,prenom_personne,id_acteur,photo
+        SELECT nom_personne,prenom_personne,id_acteur,photo,sexe
         FROM acteur
         INNER JOIN personne
         ON personne.id_personne = acteur.id_personne
@@ -175,7 +175,7 @@ class CinemaController {
         ');
 
         $suggestionRealisateur = $pdo->query('
-        SELECT nom_personne,prenom_personne,id_realisateur, photo
+        SELECT nom_personne,prenom_personne,id_realisateur,photo,sexe
         FROM realisateur
         INNER JOIN personne
         ON personne.id_personne = realisateur.id_personne
@@ -183,7 +183,7 @@ class CinemaController {
         ');
 
         $suggestionActeur = $pdo->query('
-        SELECT nom_personne,prenom_personne,id_acteur,photo
+        SELECT nom_personne,prenom_personne,id_acteur,photo,sexe
         FROM acteur
         INNER JOIN personne
         ON personne.id_personne = acteur.id_personne
@@ -213,7 +213,7 @@ class CinemaController {
         ');
 
         $suggestionRealisateur = $pdo->query('
-        SELECT nom_personne,prenom_personne,id_realisateur, photo
+        SELECT nom_personne,prenom_personne,id_realisateur,photo,sexe
         FROM realisateur
         INNER JOIN personne
         ON personne.id_personne = realisateur.id_personne
@@ -221,7 +221,7 @@ class CinemaController {
         ');
 
         $suggestionActeur = $pdo->query('
-        SELECT nom_personne,prenom_personne,id_acteur,photo
+        SELECT nom_personne,prenom_personne,id_acteur,photo,sexe
         FROM acteur
         INNER JOIN personne
         ON personne.id_personne = acteur.id_personne
@@ -271,7 +271,7 @@ class CinemaController {
         ');
 
         $suggestionRealisateur = $pdo->query('
-        SELECT nom_personne,prenom_personne,id_realisateur, photo
+        SELECT nom_personne,prenom_personne,id_realisateur,photo,sexe
         FROM realisateur
         INNER JOIN personne
         ON personne.id_personne = realisateur.id_personne
@@ -279,7 +279,7 @@ class CinemaController {
         ');
 
         $suggestionActeur = $pdo->query('
-        SELECT nom_personne,prenom_personne,id_acteur,photo
+        SELECT nom_personne,prenom_personne,id_acteur,photo,sexe
         FROM acteur
         INNER JOIN personne
         ON personne.id_personne = acteur.id_personne
@@ -322,7 +322,7 @@ class CinemaController {
         ');
 
         $suggestionRealisateur = $pdo->query('
-        SELECT nom_personne,prenom_personne,id_realisateur, photo
+        SELECT nom_personne,prenom_personne,id_realisateur,photo,sexe
         FROM realisateur
         INNER JOIN personne
         ON personne.id_personne = realisateur.id_personne
@@ -330,7 +330,7 @@ class CinemaController {
         ');
 
         $suggestionActeur = $pdo->query('
-        SELECT nom_personne,prenom_personne,id_acteur,photo
+        SELECT nom_personne,prenom_personne,id_acteur,photo,sexe
         FROM acteur
         INNER JOIN personne
         ON personne.id_personne = acteur.id_personne
@@ -373,7 +373,7 @@ class CinemaController {
         ');
 
         $suggestionRealisateur = $pdo->query('
-        SELECT nom_personne,prenom_personne,id_realisateur, photo
+        SELECT nom_personne,prenom_personne,id_realisateur,photo,sexe
         FROM realisateur
         INNER JOIN personne
         ON personne.id_personne = realisateur.id_personne
@@ -381,7 +381,7 @@ class CinemaController {
         ');
 
         $suggestionActeur = $pdo->query('
-        SELECT nom_personne,prenom_personne,id_acteur,photo
+        SELECT nom_personne,prenom_personne,id_acteur,photo,sexe
         FROM acteur
         INNER JOIN personne
         ON personne.id_personne = acteur.id_personne
@@ -420,7 +420,7 @@ class CinemaController {
         ');
 
         $suggestionRealisateur = $pdo->query('
-        SELECT nom_personne,prenom_personne,id_realisateur, photo
+        SELECT nom_personne,prenom_personne,id_realisateur,photo,sexe
         FROM realisateur
         INNER JOIN personne
         ON personne.id_personne = realisateur.id_personne
@@ -428,7 +428,7 @@ class CinemaController {
         ');
 
         $suggestionActeur = $pdo->query('
-        SELECT nom_personne,prenom_personne,id_acteur,photo
+        SELECT nom_personne,prenom_personne,id_acteur,photo,sexe
         FROM acteur
         INNER JOIN personne
         ON personne.id_personne = acteur.id_personne
@@ -654,7 +654,7 @@ class CinemaController {
         ');
 
         $suggestionRealisateur = $pdo->query('
-        SELECT nom_personne,prenom_personne,id_realisateur, photo
+        SELECT nom_personne,prenom_personne,id_realisateur,photo,sexe
         FROM realisateur
         INNER JOIN personne
         ON personne.id_personne = realisateur.id_personne
@@ -662,7 +662,7 @@ class CinemaController {
         ');
 
         $suggestionActeur = $pdo->query('
-        SELECT nom_personne,prenom_personne,id_acteur,photo
+        SELECT nom_personne,prenom_personne,id_acteur,photo,sexe
         FROM acteur
         INNER JOIN personne
         ON personne.id_personne = acteur.id_personne

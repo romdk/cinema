@@ -28,7 +28,7 @@
                             <a href="index.php?action=detailRealisateur&id=<?= $realisateur['id_realisateur'] ?>">
                                 <div class='miniature'><img src="<?= $realisateur['photo'] ?>" alt=""></div>
                                 <p><?= $realisateur['prenom_personne'].' '.$realisateur['nom_personne'] ?></p>
-                                <p>Réalisateur</p>
+                                <p><?php if ($realisateur['sexe'] == 'H'){ echo 'Réalisateur';} else{echo 'Réalisatrice';} ?></p>
                             </a>
                         </li>
                 <?php } ?>
@@ -38,7 +38,7 @@
                             <a href="index.php?action=detailActeur&id=<?= $acteur['id_acteur'] ?>">
                                 <div class='miniature'><img src="<?= $acteur['photo'] ?>" alt=""></div>
                                 <p><?= $acteur['prenom_personne'].' '.$acteur['nom_personne'] ?></p>
-                                <p>Acteur</p>
+                                <p><?php if ($acteur['sexe'] == 'H'){ echo 'Acteur';} else{echo 'Actrice';} ?></p>
                             </a>
                         </li>
                 <?php } ?>
