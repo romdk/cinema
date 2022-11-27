@@ -9,7 +9,7 @@
                 <div class='card'>
                     <div class='affiche'><img src="<?= $informations['affiche'] ?>" alt="affiche du film <?= $informations['titre'] ?>"></div>
                     <div class='infos'>
-                        <p><?= $informations['annee_sortie'].' / '.$informations['duree'].' minutes / '.$informations['nom_genre'] ?></p>
+                        <p><?= $informations['annee_sortie'].' / '.$informations['duree'].' minutes / '?><a href="index.php?action=detailGenre&id=<?= $informations['id_genre'] ?>"><?= $informations['nom_genre'] ?></a></p>
                         <p>Réalisé par <a href="index.php?action=detailRealisateur&id=<?= $informations['id_realisateur'] ?>"><?= $informations['prenom_personne'].' '.$informations['nom_personne'] ?></a></p>
                         <div class="etoiles">
                             <span id='etoile1' class="fa fa-star "></span>

@@ -7,7 +7,7 @@ $films = $requete3->fetchAll();
     <p><?= $role['nom_personnage'] ?> a été interpreter par :
     <?php
         foreach($acteurs as $acteur) { ?>
-            <p><a href="index.php?action=detailActeur&id=<?= $acteur['id_acteur'] ?>"><?= $acteur['prenom_personne'].' '.$acteur['nom_personne']?></p>
+            <p><a href="index.php?action=detailActeur&id=<?= $acteur['id_acteur'] ?>"><?= $acteur['prenom_personne'].' '.$acteur['nom_personne']?></a></p>
     <?php } ?>
         </p>
     <p>dans le(s) films suivants: </p>
