@@ -92,8 +92,6 @@
                         Nom:
                         <input type='text' name='nom_personne'>
                     </label>
-                </div>
-                <div class='row'>
                     <label>
                         Prenom:
                         <input type='text' name='prenom_personne'>
@@ -115,7 +113,7 @@
                         <input type='date' name='date_naissance'>
                     </label>
                 </div>
-                <div>
+                <div class='row'>
                     <label>
                         Affiche:
                         <input type='text' name='photo' placeholder="Inserer l'url de la photo">
@@ -137,8 +135,6 @@
                         Nom:
                         <input type='text' name='nom_personne'>
                     </label>
-                </div>
-                <div class='row'>
                     <label>
                         Prenom:
                         <input type='text' name='prenom_personne'>
@@ -160,7 +156,7 @@
                         <input type='date' name='date_naissance'>
                     </label>
                 </div>
-                <div>
+                <div class='row'>
                     <label>
                         Affiche:
                         <input type='text' name='photo' placeholder="Inserer l'url de la photo">
@@ -177,7 +173,6 @@
         <div class='doubleForm'>
             <div class='adminForm'>
                 <h4>Ajouter un rôle</h4>
-
                 <form action='index.php?action=ajoutRole' method='post'>
                     <div class='row'>
                         <label>
@@ -203,16 +198,14 @@
                                 <?php } ?> 
                             </select>
                         </label>
-                    </div>
-                    <div class='row'>
-                    <label>
-                    Personnage:
-                        <select name='personnage'>
-                            <?php foreach($personnages->fetchAll() as $personnage){ ?>
-                                <option value = "<?=$personnage['id_role']?>"><?= $personnage['nom_personnage'] ?></option>
-                            <?php } ?> 
-                        </select>
-                    </label>
+                        <label>
+                        Personnage:
+                            <select name='personnage'>
+                                <?php foreach($personnages->fetchAll() as $personnage){ ?>
+                                    <option value = "<?=$personnage['id_role']?>"><?= $personnage['nom_personnage'] ?></option>
+                                <?php } ?> 
+                            </select>
+                        </label>
                     </div>
                     <div class='row'>
                         <label>
