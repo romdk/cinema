@@ -777,10 +777,12 @@ text-transform: uppercase;
 }
 /* --------------------------------------DETAILS REALISATEUR------------------------------------------ */
 #detailRealisateur{
+    display: flex;
     background-color: #f2f2f2;
     width: 100%;
     border-radius: 5px;
     padding: 20px;
+    gap: 10px;
 }
 
 #detailRealisateur p:nth-child(1){
@@ -802,13 +804,28 @@ text-transform: uppercase;
     color: #eebe00;
 }
 
+#detailRealisateur .infos{
+    width: 50%;
+}
+
+#detailRealisateur .photo{
+    width: 17%;
+    overflow: hidden;
+}
+
+#detailRealisateur img{
+    width: 100%;
+}
+
 
 /* --------------------------------------DETAILS ACTEUR------------------------------------------ */
 #detailActeur{
+    display: flex;
     background-color: #f2f2f2;
     width: 100%;
     border-radius: 5px;
     padding: 20px;
+    gap: 10px;
 }
 
 #detailActeur p:nth-child(1){
@@ -828,6 +845,19 @@ text-transform: uppercase;
 
 #detailActeur a:hover{
     color: #eebe00;
+}
+
+#detailActeur .infos{
+    width: 50%;
+}
+
+#detailActeur .photo{
+    width: 17%;
+    overflow: hidden;
+}
+
+#detailActeur img{
+    width: 100%;
 }
 /* --------------------------------------DETAILS GENRE------------------------------------------ */
 #detailGenre{

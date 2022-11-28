@@ -287,7 +287,7 @@ class CinemaController {
         ');
 
         $requete = $pdo->prepare('
-        SELECT prenom_personne, nom_personne,date_naissance
+        SELECT prenom_personne, nom_personne,date_naissance,photo
         FROM personne
         INNER JOIN realisateur
         ON personne.id_personne = realisateur.id_personne
@@ -338,7 +338,7 @@ class CinemaController {
         ');
 
         $requete = $pdo->prepare('
-        SELECT prenom_personne, nom_personne,date_naissance
+        SELECT prenom_personne, nom_personne,date_naissance,photo
         FROM personne
         INNER JOIN acteur
         ON personne.id_personne = acteur.id_personne
