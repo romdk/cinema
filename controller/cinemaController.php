@@ -617,7 +617,7 @@ class CinemaController {
     }
 
     public function ajoutLike($id){
-        if(!isset($_SESSION['like'])){
+        if(!isset($_SESSION['like'][$id])){
             $pdo = Connect::seConnecter();
             $requete = $pdo->prepare('
             UPDATE film
@@ -625,10 +625,10 @@ class CinemaController {
             WHERE film.id_film = :id
             ');
             $requete->execute(['id' => $id]);
-            $_SESSION["like"] = true;
+            $_SESSION['like'][$id] = true;
         }
         
-        else if($_SESSION['like'] = true){
+        else if($_SESSION['like'][$id] = true){
             $pdo = Connect::seConnecter();
             $requete = $pdo->prepare('
             UPDATE film
@@ -636,7 +636,7 @@ class CinemaController {
             WHERE film.id_film = :id
             ');
             $requete->execute(['id' => $id]);
-            unset($_SESSION["like"]);
+            unset($_SESSION['like'][$id]);
         }
         header("Location:index.php?action=detailFilm&id=$id");
     }
