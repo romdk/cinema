@@ -17,7 +17,7 @@
 </head>
 <body>
     <nav>
-        <h1><i class="fa-solid fa-ticket-simple"></i><i class="fa-solid fa-film"></i>PDO Cinéma</h1>
+        <h1><i class="fa-solid fa-clapperboard"></i>Cinéma!</h1>
         <div class='searchbar' >
             <input type="text" id="searchBar" onkeyup="affSuggestions()"  placeholder="Rechercher un film, un réalisateur, un acteur..."><i class="fa-solid fa-magnifying-glass"></i>
             <!-- onblur="masqSuggestions()" -->
